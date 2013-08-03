@@ -1,6 +1,6 @@
 class PurchasesController < ApplicationController
   def new
-  	#create instance of Purchase model
+  	@purchase = Purchase.new
   end
 
   def create

@@ -1,6 +1,6 @@
 MatchPoint::Application.routes.draw do
   get "purchase" => "purchases#new"
-  post "purchases/create"
+  post "purchases" => "purchases#create"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
