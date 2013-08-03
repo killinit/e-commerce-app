@@ -9,4 +9,19 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-MatchPoint::Application.config.secret_key_base = '6a19ba1d3933f48edd0d1876788cbf33796bb3f59b7b66a644907d72b1b00fc4b889fa88594ab8ea7409582a1f1f92bd163b455ff5a01210756446a4f1a1b8c0'
+require 'securerandom'
+
+def secure_token
+  token_file = Rails.root.join('.secret')
+  if File.exist?(token_file)
+    # Use the existing token.
+    File.read(token_file).chomp
+  else
+    # Generate a new token and store it in token_file.
+    token = SecureRandom.hex(64)
+    File.write(token_file, token)
+    token
+  end
+end
+
+MatchPoint::Application.config.secret_key_base = secure_token
