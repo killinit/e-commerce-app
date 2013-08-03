@@ -1,20 +1,28 @@
 <% provide(:title, "Purchase") %>
 
+<!--need to create Purchase model-->
+<!--the Purchase model will contain the logic to create instances of User, Order, and Lesson models-->
 <%= form_for @purchase, html: {autocomplete: :off} do |form| %>
 	<div class="section-container accordion" data-section="accordion">
 		<section>
 	    <p class="title" data-section-title><a href="#" id="section-package">Select A Package</a></p>
 	    <div class="content" data-section-content>
 	      <div>
-	      	
+	      	<!--dynamically load the lesson "packages" from the database-->
 	      </div>
 	    </div>
 	  </section>
 	  <section>
-	    <p class="title" data-section-title><a href="#">Section 2</a></p>
+	    <p class="title" data-section-title><a href="#">User Info</a></p>
 	    <div class="content" data-section-content>
-	      <p>Content of section 2.</p>
+	      <!--form for user's name, email, credit card data-->
 	    </div>
 	  </section>
+	  <section>
+	    <p class="title" data-section-title><a href="#">Order Summary</a></p>
+	    <div class="content" data-section-content>
+	      <!--show the order summary-->
+	    </div>
+	  </section>	  
 	</div>
 <% end %>
