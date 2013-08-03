@@ -1,2 +1,20 @@
-<h1>Purchases#new</h1>
-<p>Find me in app/views/purchases/new.html.erb</p>
+<% provide(:title, "Purchase") %>
+
+<%= form_for @purchase, html: {autocomplete: :off} do |form| %>
+	<div class="section-container accordion" data-section="accordion">
+		<section>
+	    <p class="title" data-section-title><a href="#" id="section-package">Select A Package</a></p>
+	    <div class="content" data-section-content>
+	      <div>
+	      	
+	      </div>
+	    </div>
+	  </section>
+	  <section>
+	    <p class="title" data-section-title><a href="#">Section 2</a></p>
+	    <div class="content" data-section-content>
+	      <p>Content of section 2.</p>
+	    </div>
+	  </section>
+	</div>
+<% end %>
