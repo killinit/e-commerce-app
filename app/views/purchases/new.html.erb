@@ -19,9 +19,59 @@
 	    </div>
 	  </section>
 	  <section>
-	    <p class="title" data-section-title><a href="#">User Info</a></p>
+	    <p class="title" data-section-title><a href="#" id="section-payment">Payment</a></p>
 	    <div class="content" data-section-content>
-	      <!--form for user's name, email, credit card data-->
+	      <div class="row">
+	      	<div class="small-8 columns">
+	      		<%= form.label :first_name, class: "small-6 columns" %>
+	      		<%= form.text_field :name_first, class: "small-6 columns" %>
+	      	</div>
+	      </div>
+	      <div class="row">
+	      	<div class="small-8 columns">
+	      		<%= form.label :last_name, class: "small-6 columns" %>
+	      		<%= form.text_field :name_last, class: "small-6 columns" %>
+	      	</div>
+	      </div>
+	     	<div class="row">
+	      	<div class="small-8 columns">
+	      		<%= form.label :phone, class: "small-6 columns" %>
+	      		<%= form.text_field :phone, class: "small-6 columns" %>
+	      	</div>
+	      </div>
+	      <div class="row">
+	      	<div class="small-8 columns">
+	      		<%= form.label :email, class: "small-6 columns" %>
+	      		<%= form.text_field :email, class: "small-6 columns" %>
+	      	</div>
+	      </div>
+	      <div class="row">
+	      	<div class="small-8 columns">
+	      		<div class="payment-errors"></div>
+	      		<label>
+	      			<span>Card Number</span>
+	      			<input type="text" size="20" data-stripe="number"/>
+	      		</label>
+	      	</div>
+	      </div>
+	      <div class="row">
+	      	<div class="small-8 columns">
+	      		<label>
+	      			<span>Expiration (MM/YYYY)</span>
+	      			<select data-stripe="exp-month">
+	      				<%= @months.each do |month| %>
+	      					<option value=<% month %>><%= month %></option>
+	      				<% end %>
+	      			</select>
+	      		</label>
+	      		<span> / </span>
+            <select data-stripe="exp-year">
+              <%= @years.each do |year| %>
+                <option value=<%= year %>><%= year %></option>
+              <% end %>
+            </select>
+	      	</div>
+	      </div>
 	    </div>
 	  </section>
 	  <section>
