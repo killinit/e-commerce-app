@@ -1,6 +1,7 @@
 class PurchasesController < ApplicationController
   def new
   	@purchase = Purchase.new
+  	@packages = Package.all
   end
 
   def create

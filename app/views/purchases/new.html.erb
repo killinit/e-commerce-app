@@ -1,14 +1,20 @@
 <% provide(:title, "Purchase") %>
 
-<!--need to create Purchase model-->
-<!--the Purchase model will contain the logic to create instances of User, Order, and Lesson models-->
 <%= form_for @purchase, html: {autocomplete: :off} do |form| %>
 	<div class="section-container accordion" data-section="accordion">
 		<section>
 	    <p class="title" data-section-title><a href="#" id="section-package">Select A Package</a></p>
 	    <div class="content" data-section-content>
 	      <div>
-	      	<!--dynamically load the lesson "packages" from the database-->
+	      	<% @packages.each do |package| %>
+	      		<div>
+	      			<%= form.radio_button(:package, package.id) %>
+	      			<%= form.label("package_" + package.id.to_s, 
+	      											package.quantity.to_s + " Lesson $" + 
+	      											(package.price/100.0).to_s, 
+	      											data: { quantity: package.quantity.to_s }) %>
+	      		</div>
+	      	<% end %>
 	      </div>
 	    </div>
 	  </section>
