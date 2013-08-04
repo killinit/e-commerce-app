@@ -21,6 +21,9 @@ class PurchasesController < ApplicationController
   	email = params[:purchase][:email]
   	StripeModel.chargeCreditCard(params[:stripeToken], email, quantity, amount)
  
-  	# @purchase = Purchase.new params[:purchase]
+  	@purchase = Purchase.new params[:purchase]
+  	@purchase.quantity = quantity
+  	@purchase.price = amount
+  	@purchase.save	#save method is overridden in the Purchase model
   end
 end
