@@ -87,6 +87,12 @@
 	    <div class="content" data-section-content>
 	      <!--show the order summary-->
 	    </div>
-	  </section>	  
+	  </section>
+	  <div><%= form.submit "Purchase", :class => "small button" %></div>	  
 	</div>
 <% end %>
+<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+<script>
+  // This identifies your website in the createToken call
+  Stripe.setPublishableKey('pk_test_GE3dSmLHzDugfJTxr29lkUeg');
+</script>
