@@ -5,3 +5,23 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Package.destroy_all
+Package.create([
+	{
+		quantity: 1,
+		price: 8500
+	},
+	{
+		quantity: 5,
+		price: 40000
+	},
+	{
+		quantity: 10,
+		price: 75000
+	},
+	{
+		quantity: 20,
+		price: 140000
+	}
+	])
