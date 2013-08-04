@@ -63,32 +63,34 @@
               </div>
             </div>
 	      <div class="row">
-	      	<div class="small-2 columns">
-	      		<label>
-	      			<span>Expiration (MM/YYYY)</span>
-	      			<select data-stripe="exp-month">
-	      				<%= @months.each do |month| %>
-	      					<option value=<% month %>><%= month %></option>
-	      				<% end %>
-	      			</select>
-	      		</label>
-	      		<span> / </span>
+          <div class="small-8 columns">
+            <label>
+              <span>Expiration (MM/YYYY)</span>
+              <select data-stripe="exp-month">
+                <%= @months.each do |month| %>
+                  <option value=<%= month %>><%= month %></option>
+                <% end %>
+              </select>
+              <!--<input type="select" size="2" data-stripe="exp-month"/>-->
+            </label>
+            <span> / </span>
             <select data-stripe="exp-year">
               <%= @years.each do |year| %>
                 <option value=<%= year %>><%= year %></option>
               <% end %>
             </select>
-	      	</div>
-	      </div>
-	    </div>
-	  </section>
+            <!--<input type="select" size="4" data-stripe="exp-year"/>-->
+          </div>
+        </div>
+          </div>
+        </section>
 	  <section>
 	    <p class="title" data-section-title><a href="#">Order Summary</a></p>
 	    <div class="content" data-section-content>
 	      <!--show the order summary-->
 	    </div>
 	  </section>
-	  <div><%= form.submit "Purchase", :class => "small button" %></div>	  
+	  <div><%= form.submit "Purchase", class: "small button" %></div>	  
 	</div>
 <% end %>
 <script type="text/javascript" src="https://js.stripe.com/v2/"></script>

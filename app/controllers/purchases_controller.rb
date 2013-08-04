@@ -13,6 +13,29 @@ class PurchasesController < ApplicationController
   end
 
   def create
-  	#when purchase form is submitted, post request goes to this action
+  	package_id = params[:purchase][:package]
+  	purchase_package = Package.find package_id
+  	quantity = purchase_package.quantity.to_s
+  	amount = purchase_package.price.to_i
+  	email = params[:purchase][:email]
+
+ 
+  	customer = Stripe::Customer.create(
+      :email => email,
+      :card  => params[:stripeToken]
+    )
+
+ 		#charge user's credit card
+    charge = Stripe::Charge.create(
+      :customer    => customer.id,
+      :amount      => amount,
+      :description => quantity + ' lesson package',
+      :currency    => 'usd'
+    )
+
+    rescue Stripe::CardError => e
+      flash[:error] = e.message
+      redirect_to purchases_path  	
+  	# @purchase = Purchase.new params[:purchase]
   end
 end
