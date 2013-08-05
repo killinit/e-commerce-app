@@ -6,8 +6,8 @@ class Purchase
   def save
   	puts "save method"
   	user = User.new(name_first: name_first, name_last: name_last,
-  											phone: phone)
-  	user.orders = Order.create!(price: price, quantity: quantity)
+  											phone: phone, 
+  											orders: [price: price, quantity: quantity])
   	user.save
   end
 end
