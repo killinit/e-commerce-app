@@ -5,9 +5,20 @@ class Purchase
 
   def save
   	puts "save method"
+  	#based on quantity, create an array of lessons
+  	lessons = []
+  	quantity.to_i.times do 
+  		lessons.push Lesson.new status: "0"
+  	end
+
   	user = User.new(name_first: name_first, name_last: name_last,
   											phone: phone, 
-  											orders: [price: price, quantity: quantity])
+  											orders: 
+  											[
+  												price: price, 
+  												quantity: quantity,
+  												lessons: lessons
+  											])
   	user.save
   end
 end
