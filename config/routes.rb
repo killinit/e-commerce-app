@@ -1,4 +1,7 @@
 MatchPoint::Application.routes.draw do
+  get "login" => "sessions#new"
+  get "sessions/create"
+  get "sessions/destroy"
   get "purchase" => "purchases#new"
   post "purchases" => "purchases#create"
   # The priority is based upon order of creation: first created -> highest priority.
