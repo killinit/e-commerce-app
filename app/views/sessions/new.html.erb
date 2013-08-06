@@ -1,2 +1,11 @@
-<h1>Sessions#new</h1>
-<p>Find me in app/views/sessions/new.html.erb</p>
+<% provide(:title, "Log In") %>
+<h1>Log In</h1>
+
+<%= form_for @ %>
+<div class="content" data-section-content>
+            <div class="row">
+              <div class="small-8 columns">
+                <%= form.label :email, class: "small-6 columns" %>
+								<%= form.text_field :email, class: "small-6 columns" %>
+              </div>
+            </div>
