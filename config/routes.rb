@@ -2,7 +2,7 @@ MatchPoint::Application.routes.draw do
   get "credentials/new"
   get "credentials/create"
   get "credentials/destroy"
-  get "login" => "sessions#new"
+  get "login" => "credentials#new"
   # get "sessions/create"
   # get "sessions/destroy"
   get "purchase" => "purchases#new"
