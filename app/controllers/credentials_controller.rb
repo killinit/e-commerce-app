@@ -1,8 +1,7 @@
-class SessionsController < ApplicationController
+class CredentialsController < ApplicationController
   #render login page
   def new
   	@credential = Credential.new
-  	@packages = Package.all
   end
 
   #when login form is submitted

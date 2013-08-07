@@ -19,6 +19,7 @@ class Purchase
   												quantity: quantity,
   												lessons: lessons
   											])
+    user.credential = Credential.new()
   	user.save
   end
 end

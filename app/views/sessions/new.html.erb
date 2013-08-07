@@ -1,11 +1,15 @@
-<% provide(:title, "Log In") %>
-<h1>Log In</h1>
-
-<%= form_for @ %>
-<div class="content" data-section-content>
-            <div class="row">
-              <div class="small-8 columns">
-                <%= form.label :email, class: "small-6 columns" %>
-								<%= form.text_field :email, class: "small-6 columns" %>
-              </div>
-            </div>
+<%= form_for @credential, html: {autocomplete: :off} do |form| %>
+<div class="row">
+  <div class="small-8 columns">
+    <%= form.label :email, class: "small-6 columns"%>
+    <%= form.text_field(:email, class: "small-6 columns") %>
+  </div>
+</div>
+  <div class="row">
+    <div class="small-8 columns">
+      <%= form.label :password, class: "small-6 columns"%>
+      <%= form.text_field(:password, class: "small-6 columns") %>
+    </div>
+  </div>      
+  <div><%= form.submit "Login", :class => "small button" %></div>
+<% end %>

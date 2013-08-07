@@ -1,5 +1,6 @@
 class Credential
   include MongoMapper::Document
+  attr_accessor :password
 
   key :email, String
   key :mash, String
