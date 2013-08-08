@@ -2,14 +2,15 @@ MatchPoint::Application.routes.draw do
   get "credentials/new"
   get "credentials/create"
   get "credentials/destroy"
-  get "login" => "credentials#new"
-  # get "sessions/create"
-  # get "sessions/destroy"
+  get "signup" => "credentials#new"
+  post "credentials" => "credentials#create"
+  get "login" => "sessions#new"
   get "purchase" => "purchases#new"
   post "purchases" => "purchases#create"
   # post "sessions" => "sessions#create"
   resources :credentials
-  post "credentials" => "credentials#create"
+  resources :sessions
+  root "credentials#new"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

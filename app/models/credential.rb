@@ -3,6 +3,9 @@ class Credential
   attr_accessor :password, :password_confirmation
   before_save :encrypt_password
 
+  validates :password, confirmation: true
+  validates :password_confirmation, presence: true
+
   key :email, String
   key :mash, String
  	key :salt, String
@@ -10,7 +13,20 @@ class Credential
  	key :expires_at, Time
  	belongs_to :user
 
- 	private
+ def authenticate(email, password)
+ 		#check whether email and password are valid
+ 	count = Credential.where(email: email).count
+ 	if count > 0
+ 		puts "USER FOUND****************"
+ 		puts user
+ 		return user
+ 	else
+ 		puts "NOT FOUND***************"
+ 		return nil
+ 	end
+ end
+
+
  	def encrypt_password
  		puts "encrypt_password"
  		unless password.blank?

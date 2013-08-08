@@ -1,15 +1,16 @@
-<%= form_for @credential, html: {autocomplete: :off} do |form| %>
+<h1>Log In</h1>
+<%= form_tag sessions_path do %><!--POST request goes to sessions#create-->
 <div class="row">
   <div class="small-8 columns">
-    <%= form.label :email, class: "small-6 columns"%>
-    <%= form.text_field(:email, class: "small-6 columns") %>
+    <%= label_tag :email, class: "small-6 columns"%>
+    <%= text_field_tag(:email, class: "small-6 columns") %>
   </div>
 </div>
   <div class="row">
     <div class="small-8 columns">
-      <%= form.label :password, class: "small-6 columns"%>
-      <%= form.text_field(:password, class: "small-6 columns") %>
+      <%= label_tag :password, class: "small-6 columns"%>
+      <%= password_field_tag(:password, class: "small-6 columns") %>
     </div>
   </div>      
-  <div><%= form.submit "Login", :class => "small button" %></div>
+  <div><%= submit_tag :class => "small button" %></div>
 <% end %>
