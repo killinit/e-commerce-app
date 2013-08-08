@@ -7,6 +7,7 @@ MatchPoint::Application.routes.draw do
   get "logout" => "sessions#destroy"
   resources :credentials
   resources :sessions
+  resources :dashboard
   root "sessions#new"
 
   # The priority is based upon order of creation: first created -> highest priority.
