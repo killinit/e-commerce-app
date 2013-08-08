@@ -23,6 +23,9 @@
   <body>
     <%= render 'layouts/header' %>
     <div class="container">
+      <% flash.each do |name, message| %>
+        <%= content_tag :div, message, id:"flash#{name}" %>
+      <% end %>
       <%= yield %>
     </div>
     <%= javascript_include_tag "application" %>

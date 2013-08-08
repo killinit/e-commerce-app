@@ -1,7 +1,4 @@
 MatchPoint::Application.routes.draw do
-  get "credentials/new"
-  get "credentials/create"
-  get "credentials/destroy"
   get "signup" => "credentials#new"
   post "credentials" => "credentials#create"
   get "login" => "sessions#new"

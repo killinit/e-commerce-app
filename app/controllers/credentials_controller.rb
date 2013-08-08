@@ -6,14 +6,14 @@ class CredentialsController < ApplicationController
 
   #create action executes when login form is submitted
   def create
-    @credential = Credential.new(params[:credential])
-    if @credential.save
+    @user = User.new(params[:credential])
+    if @user.save
       redirect_to root_url, notice: "Signed Up"
     else
       render :new
     end
   end
-  
+
   #logout
   def destroy
   end
