@@ -4,10 +4,10 @@ MatchPoint::Application.routes.draw do
   get "login" => "sessions#new"
   get "purchase" => "purchases#new"
   post "purchases" => "purchases#create"
-  # post "sessions" => "sessions#create"
+  get "logout" => "sessions#destroy"
   resources :credentials
   resources :sessions
-  root "credentials#new"
+  root "sessions#new"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
