@@ -8,7 +8,10 @@ class CredentialsController < ApplicationController
   def create
     @user = User.new(params[:credential])
     if @user.save
-      #send email
+      #send email to validate account
+      @user.code = SecureRandom.urlsafe_base64
+      @user.expires_at = Time.now + 24.hours
+      @user.save
       WelcomeMailer.welcome_email(@user).deliver
       redirect_to root_url, notice: "Signed Up"
     else

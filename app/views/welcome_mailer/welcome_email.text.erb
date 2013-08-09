@@ -1,9 +1,13 @@
-Welcome to matchpoint.com!
+Welcome to Match Point!
 ===============================================
  
-You have successfully signed up to example.com,
-your username is: <%= @user.email %>.
+Your username is: <%= @user.email %>.
  
-To login to the site, just follow this link: <%= @url %>.
+To validate your email address, please click the following link:
+http://localhost:3000/reset/<%= @user.code %>
+
+Your validation code expires at <%= @user.expires_at %>
  
-Thanks for joining and have a great day!
+Thanks for signing up!
+
+-Support
