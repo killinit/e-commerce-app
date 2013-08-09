@@ -1,0 +1,23 @@
+<h1>Dashboard show</h1>
+<table class="table">
+  <tbody>
+  	<tr>
+  		<th>Order #</th>
+			<th>Package</th>
+			<th>Lessons</th>
+			<th>Status</th>
+			<th>Price</th>
+  	</tr>
+    <% @user.orders.each do |order| %>
+      <tr>
+      	<td><%= order.id %></td>
+        <td><%= order.quantity %> lesson package</td>
+        <td>Lesson 1</td>
+        <td>Active</td>
+        <td><%= order.price %></td>            
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to "Purchase Lessons", purchase_path %>

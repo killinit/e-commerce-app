@@ -6,9 +6,12 @@ MatchPoint::Application.routes.draw do
   post "purchases" => "purchases#create"
   get "logout" => "sessions#destroy"
   get "activate/:code" => "users#edit"
+  patch "users" => "users#update", as: :users
   resources :credentials
   resources :sessions
   resources :dashboard
+  resources :users
+  resources :purchases
   root "sessions#new"
 
   # The priority is based upon order of creation: first created -> highest priority.
