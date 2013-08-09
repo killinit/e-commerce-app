@@ -4,10 +4,12 @@ class CredentialsController < ApplicationController
   	@credential = Credential.new
   end
 
-  #create action executes when login form is submitted
+  #create action executes when signup form is submitted
   def create
     @user = User.new(params[:credential])
     if @user.save
+      #send email
+      WelcomeMailer.welcome_email(@user).deliver
       redirect_to root_url, notice: "Signed Up"
     else
       render :new

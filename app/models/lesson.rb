@@ -1,5 +1,5 @@
 class Lesson
-  include MongoMapper::EmbeddedDocument
-
-  key :status, Integer
+  include MongoMapper::Document
+  belongs_to :order
+  key :active, Boolean
 end

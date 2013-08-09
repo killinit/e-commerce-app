@@ -1,25 +1,20 @@
 class Purchase
   include MongoMapper::Document
-
   attr_accessor :package, :price, :quantity, :name_first, :name_last, :phone, 					 :email, :number, :cvc, :exp_month, :exp_year
 
   def save
-  	puts "save method"
-  	#based on quantity, create an array of lessons
-  	lessons = []
-  	quantity.to_i.times do 
-  		lessons.push Lesson.new status: "0"
-  	end
+    user = User.new(email: "superman@gmail.com", 
+                password: "123", 
+                password_confirmation: "123")
+    order = Order.new(price: price,
+                      quantity: quantity,
+                      user_id: user.id)
+    quantity.to_i.times do 
+      lesson = Lesson.new(status: true, order_id: order.id)
+      lesson.save
+    end
 
-  	user = User.new(name_first: name_first, name_last: name_last,
-  											phone: phone, 
-  											orders: 
-  											[
-  												price: price, 
-  												quantity: quantity,
-  												lessons: lessons
-  											])
-    user.credential = Credential.new()
-  	user.save
+    user.save
+    order.save
   end
 end

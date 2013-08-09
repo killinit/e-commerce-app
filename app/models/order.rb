@@ -1,5 +1,6 @@
 class Order
-  include MongoMapper::EmbeddedDocument
+  include MongoMapper::Document
+  belongs_to :user
   many :lessons
 
   key :price, Integer
