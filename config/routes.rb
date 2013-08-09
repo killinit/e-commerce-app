@@ -5,6 +5,7 @@ MatchPoint::Application.routes.draw do
   get "purchase" => "purchases#new"
   post "purchases" => "purchases#create"
   get "logout" => "sessions#destroy"
+  get "activate/:code" => "users#edit"
   resources :credentials
   resources :sessions
   resources :dashboard

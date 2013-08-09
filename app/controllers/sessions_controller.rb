@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
-  #render login page
   def new
+    #render login page
   end
 
   #when login form is submitted
