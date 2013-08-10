@@ -1,15 +1,4 @@
 GIT
-  remote: git://github.com/jnunemaker/mongomapper.git
-  revision: e0d7db141b2c330eb44773ef00d1b179bbdf9209
-  ref: e0d7db141b2c330eb44773ef00d1b179bbdf9209
-  specs:
-    mongo_mapper (0.13.0.beta1)
-      activemodel (>= 3.0.0)
-      activesupport (>= 3.0)
-      mongo (~> 1.8)
-      plucky (~> 0.6.5)
-
-GIT
   remote: https://github.com/stripe/stripe-ruby
   revision: fd09e677311d7d78a02af9b6c7f61b3a2c3b752d
   specs:
@@ -80,6 +69,7 @@ GEM
     database_cleaner (1.1.1)
     debug_inspector (0.0.2)
     diff-lcs (1.2.4)
+    durran-validatable (2.0.1)
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
@@ -101,6 +91,7 @@ GEM
     json (1.8.0)
     launchy (2.3.0)
       addressable (~> 2.3)
+    leshill-will_paginate (2.3.11)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
@@ -109,11 +100,14 @@ GEM
     minitest (4.7.5)
     mongo (1.9.1)
       bson (~> 1.9.1)
+    mongoid (1.0.6)
+      activesupport (>= 2.2.2)
+      durran-validatable (>= 2.0.1)
+      leshill-will_paginate (>= 2.3.11)
+      mongo (>= 0.18.2)
     multi_json (1.7.7)
     nokogiri (1.6.0)
       mini_portile (~> 0.5.0)
-    plucky (0.6.5)
-      mongo (~> 1.5)
     polyglot (0.3.3)
     rack (1.5.2)
     rack-test (0.6.2)
@@ -211,7 +205,7 @@ DEPENDENCIES
   jbuilder (~> 1.2)
   jquery-rails
   launchy
-  mongo_mapper!
+  mongoid
   rails (= 4.0.0)
   rspec-rails
   sass-rails (~> 4.0.0)

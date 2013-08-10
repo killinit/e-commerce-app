@@ -13,8 +13,7 @@ Bundler.require(:default, Rails.env)
 
 module MatchPoint
   class Application < Rails::Application
-    config.generators do |g|
-     g.orm :mongo_mapper
+    
     end
   end
 end
