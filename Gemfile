@@ -7,6 +7,7 @@ gem 'bson'
 gem 'bson_ext'
 gem 'activeresource'
 gem 'bcrypt-ruby', require: "bcrypt"
+gem "heroku", "~> 2.39.5"
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
