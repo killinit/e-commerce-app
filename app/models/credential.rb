@@ -10,7 +10,7 @@ class Credential
   field :mash, type: String
  	field :salt, type: String
  	field :code, type: String
- 	field :expires_at, Time
+ 	field :expires_at, type: Time
  	belongs_to :user
 
  def authenticate(email, password)

@@ -13,12 +13,12 @@ class User
   field :hash, type: String
  	field :salt, type: String
  	field :code, type: String
- 	field :expires_at, type: Time
+ 	# field :expires_at, type: Time
  	has_many :orders
   # one :credential
 
   def self.authenticate(email, password)
-  	user = find_by_email(email)
+  	user = find_by(email: email)
   	if user && user.hash == BCrypt::Engine.hash_secret(password, user.salt)
   		user
   	else
