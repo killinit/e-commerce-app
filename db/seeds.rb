@@ -26,8 +26,7 @@ Package.create([
 	}
 	])
 
-user = User.new(email: "superman@gmail.com",
-								expires_at: nil, 
+user = User.new(email: "superman@gmail.com", 
 								password: "123", 
 								password_confirmation: "123")
 order = Order.new(price: 200,

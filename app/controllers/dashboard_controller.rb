@@ -5,9 +5,7 @@ class DashboardController < ApplicationController
 
 	def show
 		puts "params show"
-		@user = User.find_by_id(params[:id])
-		puts "orders"
-		puts @user.orders
+		@user = User.find(params[:id])
 	end
 end
 

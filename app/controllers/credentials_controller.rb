@@ -1,5 +1,5 @@
 class CredentialsController < ApplicationController
-  #render login page
+  #render signup page
   def new
   	@credential = Credential.new
   end
@@ -13,7 +13,8 @@ class CredentialsController < ApplicationController
       @user.expires_at = Time.now + 24.hours
       @user.save
       WelcomeMailer.welcome_email(@user).deliver
-      redirect_to root_url, notice: "Signed Up"
+      redirect_to dashboard_path(@user.id)
+      # redirect_to root_url, notice: "Signed Up"
     else
       render :new
     end

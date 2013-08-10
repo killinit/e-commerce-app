@@ -3,14 +3,14 @@ class User
   attr_accessor :password, :password_confirmation
   before_save :encrypt_password
 
-  # validates :password, confirmation: true
-  # validates :password_confirmation, presence: true
+  validates :password, confirmation: true
+  validates :password_confirmation, presence: true
 
   field :name_first, type: String
   field :name_last, type: String
   field :phone, type: String
   field :email, type: String
-  field :hash, type: String
+  field :password_hash, type: String
  	field :salt, type: String
  	field :code, type: String
  	field :expires_at, type: Time
@@ -18,8 +18,14 @@ class User
   # one :credential
 
   def self.authenticate(email, password)
-  	user = find_by(email: email)
-  	if user && user.hash == BCrypt::Engine.hash_secret(password, user.salt)
+  	user = User.find_by(email: email)
+  	puts "authenticating********"
+  	puts user.email
+  	puts BCrypt::Engine.hash_secret(password, user.salt)
+  	puts user.password_hash
+  	puts user.salt
+  	puts user.code
+  	if user && user.password_hash == BCrypt::Engine.hash_secret(password, user.salt)
   		user
   	else
   		nil
@@ -27,8 +33,9 @@ class User
 	end
  	def encrypt_password
  		unless password.blank?
+ 			puts "encrypting password*******"
       self.salt = BCrypt::Engine.generate_salt
-      self.hash = BCrypt::Engine.hash_secret(password, self.salt)
+      self.password_hash = BCrypt::Engine.hash_secret(password, self.salt)
     end
  	end
 end
