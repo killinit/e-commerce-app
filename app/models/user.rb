@@ -13,7 +13,7 @@ class User
   field :hash, type: String
  	field :salt, type: String
  	field :code, type: String
- 	# field :expires_at, type: Time
+ 	field :expires_at, type: Time
  	has_many :orders
   # one :credential
 
