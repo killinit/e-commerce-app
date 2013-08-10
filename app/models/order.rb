@@ -1,8 +1,8 @@
 class Order
-  include MongoMapper::Document
+  include Mongoid::Document
   belongs_to :user
-  many :lessons
+  has_many :lessons
 
-  key :price, Integer
-  key :quantity, Integer
+  field :price, type: Integer
+  field :quantity, type: Integer
 end

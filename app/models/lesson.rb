@@ -1,5 +1,5 @@
 class Lesson
-  include MongoMapper::Document
+  include Mongoid::Document
   belongs_to :order
-  key :active, Boolean
+  field :status, type: Boolean
 end

@@ -1,16 +1,16 @@
 class Credential
-  include MongoMapper::Document
+  include Mongoid::Document
   attr_accessor :password, :password_confirmation
   before_save :encrypt_password
 
   validates :password, confirmation: true
   validates :password_confirmation, presence: true
 
-  key :email, String
-  key :mash, String
- 	key :salt, String
- 	key :code, String
- 	key :expires_at, Time
+  field :email, type: String
+  field :mash, type: String
+ 	field :salt, type: String
+ 	field :code, type: String
+ 	field :expires_at, Time
  	belongs_to :user
 
  def authenticate(email, password)

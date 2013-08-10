@@ -1,21 +1,20 @@
 class User
-  include MongoMapper::Document
+  include Mongoid::Document
   attr_accessor :password, :password_confirmation
   before_save :encrypt_password
 
   # validates :password, confirmation: true
   # validates :password_confirmation, presence: true
 
-
-  key :name_first, String
-  key :name_last, String
-  key :phone, String
-  key :email, String
-  key :hash, String
- 	key :salt, String
- 	key :code, String
- 	key :expires_at, Time
- 	many :orders
+  field :name_first, type: String
+  field :name_last, type: String
+  field :phone, type: String
+  field :email, type: String
+  field :hash, type: String
+ 	field :salt, type: String
+ 	field :code, type: String
+ 	field :expires_at, type: Time
+ 	has_many :orders
   # one :credential
 
   def self.authenticate(email, password)

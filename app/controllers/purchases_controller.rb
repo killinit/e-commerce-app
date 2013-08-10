@@ -13,6 +13,8 @@ class PurchasesController < ApplicationController
   end
 
   def create
+    puts "params[:purchase]"
+    puts params[:purchase]
   	#this action executes when the purchase form is submitted
   	package_id = params[:purchase][:package]
   	purchase_package = Package.find package_id
@@ -21,9 +23,16 @@ class PurchasesController < ApplicationController
   	email = params[:purchase][:email]
   	StripeModel.chargeCreditCard(params[:stripeToken], email, quantity, amount)
  
-  	@purchase = Purchase.new params[:purchase]
+  	@purchase = Purchase.new purchase_params
   	@purchase.quantity = quantity
   	@purchase.price = amount
-  	@purchase.save	#save method is overridden in the Purchase model
+  	if @purchase.save	#save method is overridden in the Purchase model
+      puts "saved************"
+    end
+  end
+
+  private
+  def purchase_params
+    params.require(:purchase).permit(:package, :name_first, :name_last, :phone, :email)
   end
 end

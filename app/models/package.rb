@@ -1,6 +1,6 @@
 class Package
-  include MongoMapper::Document
+	include Mongoid::Document
 
-  key :quantity, Integer
-  key :price, Integer
+  field :quantity, type: Integer
+  field :price, type: Integer
 end

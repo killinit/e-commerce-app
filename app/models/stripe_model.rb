@@ -1,5 +1,5 @@
 class StripeModel
-  include MongoMapper::Document
+  include Mongoid::Document
 
   def self.chargeCreditCard(token, email, quantity, amount)
 		customer = Stripe::Customer.create(

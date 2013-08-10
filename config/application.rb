@@ -14,6 +14,6 @@ Bundler.require(:default, Rails.env)
 module MatchPoint
   class Application < Rails::Application
     
-    end
+
   end
 end
