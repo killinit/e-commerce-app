@@ -86,11 +86,21 @@
         </section>
 	  <section>
 	    <p class="title" data-section-title><a href="#">Order Summary</a></p>
-	    <div class="content" data-section-content>
+	    <div class="content" id="order-summary-content" data-section-content>
 	      <!--show the order summary-->
-	    </div>
-	  </section>
-	  <div><%= form.submit "Purchase", class: "small button" %></div>	  
+	      <div id="summary_name_first"></div>
+	      <div id="summary_name_last"></div>
+	      <div id="summary_phone"></div>
+	      <div id="summary_payment_method"></div>
+	      <div>
+          <% @packages.each do |package| %>
+          <div id = "<%= package.id.to_s %>selected" class="hidden-package"> <%= package.quantity %> Lessons for $<%= (package.price/100.0).to_s %> 
+          </div>
+          <% end %>
+        </div>
+	  		<div><%= form.submit "Purchase", class: "small button" %></div>	  
+			</div>
+		</section>
 	</div>
 <% end %>
 <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
