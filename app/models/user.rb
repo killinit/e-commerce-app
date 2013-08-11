@@ -19,7 +19,6 @@ class User
 
   def self.authenticate(email, password)
   	user = User.find_by(email: email)
-  	puts "authenticating********"
   	puts user.email
   	puts BCrypt::Engine.hash_secret(password, user.salt)
   	puts user.password_hash
@@ -33,7 +32,6 @@ class User
 	end
  	def encrypt_password
  		unless password.blank?
- 			puts "encrypting password*******"
       self.salt = BCrypt::Engine.generate_salt
       self.password_hash = BCrypt::Engine.hash_secret(password, self.salt)
     end

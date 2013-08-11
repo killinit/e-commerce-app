@@ -3,8 +3,8 @@ class Credential
   attr_accessor :password, :password_confirmation
   before_save :encrypt_password
 
-  validates :password, confirmation: true
-  validates :password_confirmation, presence: true
+  # validates :password, confirmation: true
+  # validates :password_confirmation, presence: true
 
   field :email, type: String
   field :mash, type: String
