@@ -11,7 +11,7 @@ class CredentialsController < ApplicationController
       @user.code = SecureRandom.urlsafe_base64
       @user.expires_at = Time.now + 24.hours
       @user.save
-      WelcomeMailer.welcome_email(@user).deliver
+      ActivationMailer.signup_activation(@user).deliver
       # redirect_to login_path, 
       # notice: "We've just sent a validation email to #{@user.email}. Please check your email to validate your account"
     else
