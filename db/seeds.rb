@@ -33,7 +33,7 @@ order = Order.new(price: 200,
 									quantity: 3,
 									user_id: user.id)
 3.times do 
-	lesson = Lesson.new(status: true, order_id: order.id)
+	lesson = Lesson.new(status: "Active", order_id: order.id)
 	lesson.save
 end
 

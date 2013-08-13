@@ -3,8 +3,8 @@ class User
   attr_accessor :password, :password_confirmation
   before_save :encrypt_password
 
-  validates :password, confirmation: true
-  validates :password_confirmation, presence: true
+  # validates :password, confirmation: true
+  # validates :password_confirmation, presence: true
 
   field :name_first, type: String
   field :name_last, type: String

@@ -4,18 +4,29 @@
   	<tr>
   		<th>Order #</th>
 			<th>Package</th>
-			<th>Lessons</th>
-			<th>Status</th>
 			<th>Price</th>
+      <th>Lesson #</th>
+			<th>Status</th>
   	</tr>
     <% @user.orders.each do |order| %>
       <tr>
       	<td><%= order.id %></td>
         <td><%= order.quantity %> lesson package</td>
+        <td><%= "$#{order.price / 100.0}" %></td> 
         <td>Lesson 1</td>
-        <td>Active</td>
-        <td><%= order.price %></td>            
+        <td><%= order.lessons[0].status %></td>           
       </tr>
+      <% order.lessons.each_with_index do |lesson, index| %>
+        <% if index != 0 %>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>lesson <%= index + 1 %></td>
+            <td><%= lesson.status %></td>
+          </tr>
+        <% end %>
+      <% end %>
     <% end %>
   </tbody>
 </table>
