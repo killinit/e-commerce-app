@@ -12,8 +12,9 @@ class UsersController < ApplicationController
     @user.save
     #login the user
     session[:user_id] = @user.id
-    redirect_to dashboard_path(@user.id)
+    redirect_to dashboard_path(@user.id), alert: "Your account has been activated"
     end
+
   end
 
   def update
