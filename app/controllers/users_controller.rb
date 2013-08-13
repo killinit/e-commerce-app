@@ -10,6 +10,9 @@ class UsersController < ApplicationController
     @user.code = nil
     @user.expires_at = nil
     @user.save
+    #login the user
+    session[:user_id] = @user.id
+    redirect_to dashboard_path(@user.id)
     end
   end
 
