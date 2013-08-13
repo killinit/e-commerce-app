@@ -3,26 +3,6 @@
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
-Things you may want to cover:
+Match Point is an e-commerce app which sells tennis lessons.  The lessons are sold in packages ranging from a single-lesson package to a ten-lesson package. When a user visits the site they fill out the sign up form where they enter their email address and choose a password for their new account. The user is sent an email containing a link to validate their email address. When the user clicks the email validation link they are logged in and taken to their dashboard. 
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+The dashboard is where users can view their order history and see how many tennis lessons are active/expired. The dashboard contains a button to purchase more lessons. Users purchase a lesson package via one-time credit card payments. The app processes the payment securely using the Stripe API. The credit card number, CVC number, and expiration date are validated by the Stripe API. Stripe generates a secure token using client-side JavaScript. The secure token is sent to the server as a hidden field. The post request is routed to the PurchasesController create action. In the create action the secure token is used to process the payment
