@@ -9,6 +9,6 @@ class ActivationMailer < ActionMailer::Base
   def signup_activation(user)
     @user = user
     @url = 'http://localhost:3000/login'
-    mail to: @user.email, subject: "New account validation"
+    mail to: @user.email, subject: "Match Point validate email"
   end
 end
