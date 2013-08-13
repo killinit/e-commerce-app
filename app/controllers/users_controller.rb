@@ -1,10 +1,16 @@
 class UsersController < ApplicationController
   #activate new account
   def edit
-  	@user = User.find_by(code: params[:code])
-  	if @user.expires_at < Time.now
-  		redirect_to signup_url, alert: "Your code has expired"
-  	end
+    @user = User.find_by(code: params[:code])
+  	
+    if @user
+      if @user.expires_at < Time.now
+        redirect_to signup_url, alert: "Your code has expired"
+      end
+    @user.code = nil
+    @user.expires_at = nil
+    @user.save
+    end
   end
 
   def update
