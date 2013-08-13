@@ -1,9 +1,9 @@
-<h3>My Dashboard</h3>
+<h3><%= "#{@user.name_first}'s Dashboard" unless @user.name_first.nil? %></h3>
 
 <table>
   <thead>
     <tr>
-      <th width="200">Order</th>
+      <th width="200">Order #</th>
       <th>Package</th>
       <th width="150">Price</th>
       <th width="150">Lesson</th>
@@ -11,9 +11,9 @@
     </tr>
   </thead>
   <tbody>
-    <% @user.orders.each do |order| %>
+    <% @user.orders.each_with_index do |order, index| %>
       <tr>
-        <td><%= order.id %></td>
+        <td><%= index + 1 %></td>
         <td><%= order.quantity %> lesson package</td>
         <td><%= "$#{order.price / 100.0}" %></td> 
         <td>Lesson 1</td>

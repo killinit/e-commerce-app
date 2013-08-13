@@ -29,7 +29,7 @@
           <% when "Logged in!" %>
             <%= content_tag :div, message, id: "flash#{notice}", class:"alert-box success" %>
           <% else %>
-            <%= content_tag :div, message, id: "flash#{notice}", class:"alert-box" %>
+            <%= content_tag :div, message, id: "flash#{notice}", class:"alert-box success" %>
         <% end %>
       <% end %>
       <div id="user_nav">
