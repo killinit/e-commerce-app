@@ -15,7 +15,7 @@ class Purchase
       lesson.save
     end
 
-    user.save!
+    user.save
     order.save
   end
 end

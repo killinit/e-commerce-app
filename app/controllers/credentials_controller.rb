@@ -12,8 +12,8 @@ class CredentialsController < ApplicationController
       @user.expires_at = Time.now + 24.hours
       @user.save
       ActivationMailer.signup_activation(@user).deliver
-      # redirect_to login_path, 
-      # notice: "We've just sent a validation email to #{@user.email}. Please check your email to validate your account"
+      redirect_to login_path, 
+      notice: "We've sent a validation email to #{@user.email}. Please open your email and click the validation link to validate your account"
     else
       render :new
     end

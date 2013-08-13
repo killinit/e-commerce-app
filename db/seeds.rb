@@ -29,7 +29,7 @@ Package.create([
 user = User.new(email: "superman@gmail.com", 
 								password: "123", 
 								password_confirmation: "123")
-order = Order.new(price: 200,
+order = Order.new(price: 20000,
 									quantity: 3,
 									user_id: user.id)
 3.times do 
