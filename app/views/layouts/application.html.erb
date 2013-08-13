@@ -32,7 +32,14 @@
         <% end %>
       </div>
       <% flash.each do |name, message| %>
-        <%= content_tag :div, message, id:"flash#{name}" %>
+        <% case message %>
+          <% when "Logged out!" %>
+            <%= content_tag :div, message, id: "flash#{notice}", class:"alert-box alert" %>
+          <% when "Logged in!" %>
+            <%= content_tag :div, message, id: "flash#{notice}", class:"alert-box success" %>
+        <% end %>
+        
+        <%#= content_tag :div, message, id:"flash#{name}" %>
       <% end %>
       <%#= render 'layouts/header' %>
       <%= yield %>
