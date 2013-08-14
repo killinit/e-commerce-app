@@ -12,6 +12,7 @@ MatchPoint::Application.routes.draw do
   resources :dashboard
   resources :users
   resources :purchases
+  resources :instructors
   root "sessions#new"
 
   # The priority is based upon order of creation: first created -> highest priority.
