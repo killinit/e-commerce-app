@@ -5,7 +5,7 @@ class User
 
   # validates :password, confirmation: true
   # validates :password_confirmation, presence: true
-
+  field :is_admin, type: Boolean, default: false
   field :name_first, type: String
   field :name_last, type: String
   field :phone, type: String
