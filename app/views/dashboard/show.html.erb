@@ -1,5 +1,5 @@
 <h3><%= "#{@current_user.name_first}'s Dashboard" unless @current_user.name_first.nil? %></h3>
-<%= render 'layouts/customer', object: @suckit %>
+<%= render 'layouts/customer', object: @object %>
 <div>
   <a href=<%= purchase_path %> class="small button">Purchase Lessons</a>
 </div>

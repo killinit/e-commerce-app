@@ -1,0 +1,6 @@
+users index
+<% @customers.each do |customer| %>
+	<%#= puts "looping through customers" %> 
+	<%#= puts "#{customer.name_first} #{customer.name_last}"  %>
+  <%= render partial: "layouts/customer", object: customer %>
+<% end %>

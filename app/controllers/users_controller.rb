@@ -1,4 +1,10 @@
 class UsersController < ApplicationController
+  def index
+    @customers = User.all
+    puts "users controller index action"
+    puts "session create #{session[:user_id]} ********"
+  end
+
   #activate new account
   def edit
     @user = User.find_by(code: params[:code])
@@ -14,7 +20,6 @@ class UsersController < ApplicationController
     session[:user_id] = @user.id
     redirect_to dashboard_path(@user.id), alert: "Your account has been activated"
     end
-
   end
 
   def update

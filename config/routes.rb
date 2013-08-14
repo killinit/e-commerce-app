@@ -6,7 +6,9 @@ MatchPoint::Application.routes.draw do
   post "purchases" => "purchases#create"
   get "logout" => "sessions#destroy"
   get "activate/:code" => "users#edit"
+  get "all_users" => "users#index"
   patch "users" => "users#update", as: :users
+
   resources :credentials
   resources :sessions
   resources :dashboard
