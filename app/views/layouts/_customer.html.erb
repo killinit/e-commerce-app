@@ -17,6 +17,17 @@
         <td>Lesson 1</td>
         <td><%= order.lessons[0].status %></td>  
       </tr>
+      <% order.lessons.each_with_index do |lesson, index| %>
+        <% if index != 0 %>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>lesson <%= index + 1 %></td>
+            <td><%= lesson.status %></td>
+           </tr>
+        <% end %>
+      <% end %>
     <% end %>
   </tbody>
 </table>

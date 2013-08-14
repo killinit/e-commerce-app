@@ -10,8 +10,6 @@ class ApplicationController < ActionController::Base
   #to @current_user
     if session[:user_id]
       @current_user ||= User.find(session[:user_id]) 
-      puts "in current_user method"
-      puts @current_user.email
     end
   end
 

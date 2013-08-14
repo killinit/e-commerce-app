@@ -1,5 +1,6 @@
-<h3><%= "#{@current_user.name_first}'s Dashboard" unless @current_user.name_first.nil? %></h3>
-<%= render 'layouts/customer', object: @object %>
+<h3><%= "#{@customer.name_first}'s Dashboard" unless @customer.name_first.nil? %></h3>
+
+<%= render partial: "layouts/customer", object: @customer %>
 <div>
   <a href=<%= purchase_path %> class="small button">Purchase Lessons</a>
 </div>
