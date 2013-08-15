@@ -11,7 +11,6 @@ MatchPoint::Application.routes.draw do
 
   resources :credentials
   resources :sessions
-  resources :dashboard
   resources :users
   resources :purchases
   resources :instructors
