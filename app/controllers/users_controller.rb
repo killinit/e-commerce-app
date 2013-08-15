@@ -1,8 +1,18 @@
 class UsersController < ApplicationController
+  #render signup page
+  def new
+    @credential = Credential.new
+  end
+
   def index
     @customers = User.all
     puts "users controller index action"
     puts "session create #{session[:user_id]} ********"
+  end
+
+  def show
+    @customer = current_user
+    #@user = User.find(params[:id])
   end
 
   #activate new account

@@ -1,5 +1,5 @@
 MatchPoint::Application.routes.draw do
-  get "signup" => "credentials#new"
+  get "signup" => "users#new"
   post "credentials" => "credentials#create"
   get "login" => "sessions#new"
   get "purchase" => "purchases#new"

@@ -12,9 +12,8 @@ class SessionsController < ApplicationController
       puts "session create #{session[:user_id]} ********"
       redirect_to all_users_path
     elsif user
-      #puts "sessions elsif***********"
       session[:user_id] = user.id
-      redirect_to dashboard_path(user.id), notice: "Logged in!"
+      redirect_to user_path(user.id), notice: "Logged in!"
       # redirect_to root_url, notice: "Logged in!"
     else
       #puts "sessions else***********"

@@ -5,6 +5,7 @@ class CredentialsController < ApplicationController
   end
 
   #create action executes when signup form is submitted
+  #note: put create action in Usrs controller
   def create
     @user = User.new credential_params
     if @user
@@ -19,10 +20,11 @@ class CredentialsController < ApplicationController
     end
   end
 
-  #logout
-  def destroy
-  end
+  # #logout
+  # def destroy
+  # end
 
+  #move to Users controller
   private
   def credential_params
     params.require(:credential).permit(:email, :password, 
