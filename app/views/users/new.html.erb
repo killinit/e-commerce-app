@@ -1,4 +1,5 @@
-<%= form_for @credential, html: {autocomplete: :off} do |form| %>
+<%= form_for @credential, url: users_path, html: {autocomplete: :off} do |form| %>
+form_for(@article, url: articles_path)
   <% if @credential.errors.any? %>
     <div class="error_messages">
       <h2>Form is invalid</h2>

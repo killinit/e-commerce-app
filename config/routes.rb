@@ -1,13 +1,13 @@
 MatchPoint::Application.routes.draw do
   get "signup" => "users#new"
-  post "credentials" => "credentials#create"
+  post "users" => "users#create"
   get "login" => "sessions#new"
   get "purchase" => "purchases#new"
   post "purchases" => "purchases#create"
   get "logout" => "sessions#destroy"
   get "activate/:code" => "users#edit"
   get "all_users" => "users#index"
-  patch "users" => "users#update", as: :users
+  #patch "users" => "users#update", as: :users
 
   resources :credentials
   resources :sessions

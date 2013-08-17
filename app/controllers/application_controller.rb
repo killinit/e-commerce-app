@@ -6,8 +6,6 @@ class ApplicationController < ActionController::Base
 
   private
 	def current_user
-  #if user is logged in, get the user's id from session hash and assign it
-  #to @current_user
     if session[:user_id]
       @current_user ||= User.find(session[:user_id])
     end
