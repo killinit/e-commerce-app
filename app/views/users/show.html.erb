@@ -1,7 +1,19 @@
 <!-- <h3><%#= "#{@customer.name_first}'s Dashboard" unless @customer.name_first.nil? %></h3> -->
 
+<!-- put these 3 things in a row using Foundation
+<span>Order Summary link</span>
+<span>Package: 5 lessons</span>
+<span>render partial: contact info</span>
 
-<%= render partial: "layouts/customer", object: @customer %>
+render partial: lessons -->
+
+<% @customer.orders.each_with_index do |order, index| %>
+	<%= render partial: "layouts/customer", object: order %>
+<% end %>
+
+<a href=<%#= purchase_path %> class="small button">Purchase Lessons</a>
+
+<!-- <%#= render partial: "layouts/customer", object: @customer %>
 <div>
-  <a href=<%= purchase_path %> class="small button">Purchase Lessons</a>
-</div>
+  <a href=<%#= purchase_path %> class="small button">Purchase Lessons</a>
+</div> -->

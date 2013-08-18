@@ -31,7 +31,7 @@ class UsersController < ApplicationController
     #@user = User.find(params[:id])
   end
 
-  #activate new account
+  #email validation link was clicked, activate new account
   def edit
     @user = User.find_by(code: params[:code])
   	
