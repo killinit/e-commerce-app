@@ -2,8 +2,6 @@ class UsersController < ApplicationController
 
   def index
     @customers = User.all
-    puts "users controller index action"
-    puts "session create #{session[:user_id]} ********"
   end
 
   def create
