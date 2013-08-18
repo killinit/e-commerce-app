@@ -5,49 +5,26 @@
 <!--[if IE 8 ]>    <html class="ie8" lang="en"> <![endif]-->
 <!--[if (gte IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
   <head>
-  	<meta charset="utf-8" />
+    <meta charset="utf-8" />
 
-  	<!-- Uncomment to make IE8 render like IE7 -->
-  	<!-- <meta http-equiv="X-UA-Compatible" content="IE=7" /> -->
+    <!-- Uncomment to make IE8 render like IE7 -->
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=7" /> -->
 
-  	<!-- Set the viewport width to device width for mobile -->
-  	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  	<title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
-
-  	<%= stylesheet_link_tag    "application" %>
-  	<%= javascript_include_tag "vendor/custom.modernizr" %>
+    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/custom.modernizr" %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
   </head>
 
   <body>
-    <div class="container">
-      <% flash.each do |name, message| %>
-        <% case message %>
-          <% when "Logged out!" %>
-            <%= content_tag :div, message, id: "flash#{notice}", class:"alert-box alert" %>
-          <% when "Logged in!" %>
-            <%= content_tag :div, message, id: "flash#{notice}", class:"alert-box success" %>
-          <% else %>
-            <%= content_tag :div, message, id: "flash#{notice}", class:"alert-box success" %>
-        <% end %>
-      <% end %>
-      <div id="user_nav">
-        <% if name_first %>
-          Hi, <%= current_user.name_first %>
-          <%= link_to "Log out", logout_path %>
-        <% elsif current_user %>
-          Logged in as <%= current_user.email %> 
-          <%= link_to "Log out", logout_path %>
-        <% else %>
-          <%= link_to "Sign up", signup_path %> or
-          <%= link_to "Log in", login_path %>
-        <% end %>
-      </div>
-      <%#= render 'layouts/header' %>
-      <%= yield %>
-    </div>
-   <%= javascript_include_tag "application" %> 
+
+    <%= yield %>
+
+    
+    <%= javascript_include_tag "application" %>
   </body>
 </html>

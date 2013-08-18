@@ -16,7 +16,9 @@ class StripeModel
     )
 
     rescue Stripe::CardError => e
-      flash[:error] = e.message
-      redirect_to purchases_path
+      puts "in rescue************"
+      puts e.message
+      # flash[:error] = e.message
+      # redirect_to purchase_path
 	end
 end

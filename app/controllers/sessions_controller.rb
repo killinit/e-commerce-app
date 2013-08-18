@@ -9,14 +9,12 @@ class SessionsController < ApplicationController
     #check whether user is an instructor or a student
     if is_instructor?(user)
       session[:user_id] = user.id
-      puts "session create #{session[:user_id]} ********"
       redirect_to all_users_path
     elsif user
       session[:user_id] = user.id
       redirect_to user_path(user.id), notice: "Logged in!"
       # redirect_to root_url, notice: "Logged in!"
     else
-      #puts "sessions else***********"
       flash.now.alert = "Invalid Login"
       render :new
     end

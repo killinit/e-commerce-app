@@ -28,7 +28,7 @@ class PurchasesController < ApplicationController
   	@purchase.price = amount
   	@purchase.save	#save method is overridden in the Purchase model
 
-    redirect_to dashboard_path(session[:user_id])
+    redirect_to user_path(session[:user_id])
   end
 
   private

@@ -3,7 +3,7 @@
 
 <% @customer.orders.each_with_index do |order, index| %>
 	<div class="row">
-	  <div class="large-4 columns">Order Summary</div>
+	  <div class="large-4 columns">Order #<%= index + 1 %></div>
 	  <div class="large-4 columns"><%= order.quantity %> Lesson Package</div>
 	  <div class="large-4 columns"></div>
 	</div>
@@ -12,7 +12,7 @@
 			<%= render partial: "layouts/schedule", object: order %>
 		</div>
 		<div class="large-6 columns">
-			<%= render partial: "layouts/contact" %>
+			<%= render partial: "layouts/contact", object: @instructor %>
 	  </div>
 	 </div><!--end .row-->
 <% end %>

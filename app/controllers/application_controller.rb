@@ -13,7 +13,6 @@ class ApplicationController < ActionController::Base
 
   def name_first
     if current_user
-      puts "here**********"
       @name_first ||= current_user.name_first
     end
   end

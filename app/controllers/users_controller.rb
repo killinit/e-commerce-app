@@ -26,7 +26,7 @@ class UsersController < ApplicationController
 
   def show
     @customer = current_user
-    #@user = User.find(params[:id])
+    @instructor = User.find_by(_type: "Instructor")
   end
 
   #email validation link was clicked, activate new account
