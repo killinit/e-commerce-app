@@ -3,20 +3,16 @@
     <tr>
       <th width="150">Lesson</th>
       <th with="150">Status</th>
+      <th width="150">Date Given</th>
     </tr>
   </thead>
   <tbody>       
+    <% schedule.lessons.each_with_index do |lesson, index| %>
       <tr>
-        <td>Lesson 1</td>
-        <td><%= schedule.lessons[0].status %></td>  
+        <td>lesson <%= index + 1 %></td>
+        <td><%= lesson.status %></td>
+        <td>Date goes here</td>
       </tr>
-      <% schedule.lessons.each_with_index do |lesson, index| %>
-        <% if index != 0 %>
-          <tr>
-            <td>lesson <%= index + 1 %></td>
-            <td><%= lesson.status %></td>
-           </tr>
-      <% end %><!-- end if -->
-    <% end %><!-- end loop over lessons-->
+    <% end %>
   </tbody>
 </table>
