@@ -1,11 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
-
 Package.destroy_all
 Package.create([
 	{
@@ -26,16 +18,41 @@ Package.create([
 	}
 	])
 
+User.destroy_all
 user = User.new(email: "superman@gmail.com", 
 								password: "123", 
 								password_confirmation: "123")
-order = Order.new(price: 20000,
-									quantity: 3,
-									user_id: user.id)
-3.times do 
-	lesson = Lesson.new(status: "Active", order_id: order.id)
+
+instructor = Instructor.new(email: "donniemac@gmail.com",
+														password:"123",
+														password_confirmation:"123")
+
+instructor2 = Instructor.new(email: "roger@gmail.com",
+														password:"123",
+														password_confirmation:"123")
+
+order = Order.new(price: 8500,
+									quantity: 1,
+									user_id: user.id,
+									instructor_id: instructor.id)
+
+order2 = Order.new(price: 40000,
+									quantity: 5,
+									user_id: user.id,
+									instructor_id: instructor2.id)
+
+1.times do 
+	lesson = Lesson.new(status: "Available", order_id: order.id)
 	lesson.save
 end
 
+5.times do
+	lesson = Lesson.new(status: "Available", order_id: order2.id)
+	lesson.save	
+end
+
 user.save
+instructor.save
+instructor2.save
 order.save
+order2.save

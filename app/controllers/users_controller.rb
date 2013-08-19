@@ -19,8 +19,6 @@ class UsersController < ApplicationController
   end
 
   def new
-    puts "users new*******"
-    #@user = User.new
     @credential = Credential.new
   end
 
