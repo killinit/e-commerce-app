@@ -1,10 +1,10 @@
 <% provide(:title, "Purchase") %>
 
 <%= form_for @purchase, html: {autocomplete: :off} do |form| %>
-	<div class="section-container accordion" data-section="accordion">
+<!-- 	<div class="section-container accordion" data-section="accordion">
 		<section>
 	    <p class="title" data-section-title><a href="#" id="section-package">Select A Package</a></p>
-	    <div class="content" data-section-content>
+	    <div class="content" data-section-content> -->
 	      <div class="row">
 	      	<% @packages.each do |package| %>
 	      		<div>
@@ -29,10 +29,10 @@
 	      	</div>
 	      </div><!--.row-->
 	    </div>
-	  </section>
-	  <section>
-	    <p class="title" data-section-title><a href="#" id="section-payment">Payment</a></p>
-	    <div class="content" data-section-content>
+<!-- 	  </section>
+	  <section> -->
+<!-- 	    <p class="title" data-section-title><a href="#" id="section-payment">Payment</a></p>
+	    <div class="content" data-section-content> -->
 	      <div class="row">
 	      	<div class="small-8 columns">
 	      		<%= form.label :first_name, class: "small-6 columns" %>
@@ -95,10 +95,10 @@
           </div>
         </div>
           </div>
-        </section>
-	  <section>
-	    <p class="title" data-section-title><a href="#" id="section-summary">Order Summary</a></p>
-	    <div class="content" id="order-summary-content" data-section-content>
+<!--         </section>
+	  <section> -->
+<!-- 	    <p class="title" data-section-title><a href="#" id="section-summary">Order Summary</a></p> -->
+<!-- 	    <div class="content" id="order-summary-content" data-section-content> -->
 	      <!--show the order summary-->
 	      <div id="summary_name_first"></div>
 	      <div id="summary_name_last"></div>
@@ -112,7 +112,7 @@
         </div>
 	  		<div><%= form.submit "Purchase", class: "small button" %></div>	  
 			</div>
-		</section>
+<!-- 		</section> -->
 	</div>
 <% end %>
 <script type="text/javascript" src="https://js.stripe.com/v2/"></script>

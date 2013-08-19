@@ -1,20 +1,20 @@
-$('#section-summary').click(function() {
-  var package_selected = getSelectedPackage();
-  var name_first = $('#purchase_name_first').val();
-  var name_last = $('#purchase_name_last').val();
-  var phone_number = $('#purchase_phone').val();
-  var email = $('#purchase_email').val();
-  $('#summary_name_first').html("First Name: " + name_first);
-  $('#summary_name_last').html("Last Name: " + name_last);
-  $('#summary_phone').html("Phone: " + phone_number);
-  $('#summary_email').html("Email: " + email);
-  $('#' + package_selected).removeClass('hidden-package');
-});
+// $('#section-summary').click(function() {
+//   var package_selected = getSelectedPackage();
+//   var name_first = $('#purchase_name_first').val();
+//   var name_last = $('#purchase_name_last').val();
+//   var phone_number = $('#purchase_phone').val();
+//   var email = $('#purchase_email').val();
+//   $('#summary_name_first').html("First Name: " + name_first);
+//   $('#summary_name_last').html("Last Name: " + name_last);
+//   $('#summary_phone').html("Phone: " + phone_number);
+//   $('#summary_email').html("Email: " + email);
+//   $('#' + package_selected).removeClass('hidden-package');
+// });
 
-$('#section-package').click(function() {
-    //clear the selected package from the order summary section
-  $('#' + getSelectedPackage()).addClass('hidden-package');
-});
+// $('#section-package').click(function() {
+//     //clear the selected package from the order summary section
+//   $('#' + getSelectedPackage()).addClass('hidden-package');
+// });
 
 function getSelectedPackage() {
   return $('input[type="radio"][name="purchase[package]"]:checked').val() + "selected";
