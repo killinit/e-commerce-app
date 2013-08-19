@@ -72,6 +72,13 @@ class UsersController < ApplicationController
   end
 
   private
+  def add_style(item)
+     if (item.status ==  "Used")
+        return  "alert"
+      else 
+        return "success"
+      end
+    end
   def user_params
     params.require(:credential).permit(:email, :password, 
                                        :password_confirmation)
