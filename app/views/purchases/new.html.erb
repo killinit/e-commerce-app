@@ -4,20 +4,24 @@
 <!-- 	<div class="section-container accordion" data-section="accordion">
 		<section>
 	    <p class="title" data-section-title><a href="#" id="section-package">Select A Package</a></p>
+	    <div class="small-3 small-centered columns">3 centered</div>
 	    <div class="content" data-section-content> -->
 	      <div class="row">
-	      	<% @packages.each do |package| %>
-	      		<div>
-	      			<%= form.radio_button(:package, package.id) %>
-	      			<%= form.label("package_" + package.id.to_s, 
+  				<div class="small-8 columns">      	
+  					<% @packages.each do |package| %>
+	      			<div>
+	      				<%= form.radio_button(:package, package.id) %>
+	      				<%= form.label("package_" + package.id.to_s, 
 	      											package.quantity.to_s + " Lesson $" + 
 	      											(package.price/100.0).to_s, 
 	      											data: { quantity: package.quantity.to_s }) %>
-	      		</div>
-	      	<% end %>
+	      			</div>
+	      		<% end %>
+	      	</div>
+	      	
 	      </div><!--.row-->
 	      <div class="row">
-	      	<div class="small-3 columns">
+	      	 <div class="small-2 columns">
      				<label>
              <span>Instructor</span>
              <select name="purchase[instructor]">
@@ -28,7 +32,6 @@
             </label>
 	      	</div>
 	      </div><!--.row-->
-	    </div>
 <!-- 	  </section>
 	  <section> -->
 <!-- 	    <p class="title" data-section-title><a href="#" id="section-payment">Payment</a></p>
