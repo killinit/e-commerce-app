@@ -13,7 +13,7 @@ class Purchase
                       customer_id: user.id,
                       instructor_id: coach.id)
     quantity.to_i.times do 
-      lesson = Lesson.new(status: "Active", order_id: order.id)
+      lesson = Lesson.new(status: "Available", order_id: order.id)
       lesson.save
     end
 

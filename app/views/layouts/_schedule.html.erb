@@ -11,7 +11,9 @@
         <td>Lesson <%= index + 1 %></td>
          <% if (current_user.is_a? Instructor) %>
           <td><a href="#" class="small button <%=add_style(lesson)%>" data-id=<%= lesson.id %> data-status=<%= lesson.status %>><%= lesson.status %></a></td>
-        <% end %>
+          <% else %>
+            <td><span class="<%=add_style(lesson)%> label" data-id=<%= lesson.id %> data-status=<%= lesson.status %>><%= lesson.status %></span></td>
+          <% end %>
       </tr>
     <% end %>
   </tbody>
