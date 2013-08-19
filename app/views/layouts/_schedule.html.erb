@@ -12,8 +12,10 @@
     <% schedule.lessons.each_with_index do |lesson, index| %>
       <tr>
         <td>Lesson <%= index + 1 %></td>
-        <td><%= lesson.status %></td>
-        <td><a href="#" class="small button" data-id=<%= lesson.id %> data-status=<%= lesson.status %>>Toggle Status</a></td>
+        <td><span class="label"><%= lesson.status %></span></td>
+         <% if (current_user.is_a? Instructor) %>
+          <td><a href="#" class="small button" data-id=<%= lesson.id %> data-status=<%= lesson.status %>>Toggle Status</a></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
