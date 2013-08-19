@@ -10,7 +10,7 @@
     <% schedule.lessons.each_with_index do |lesson, index| %>
       <tr>
         <td>lesson <%= index + 1 %></td>
-        <td><%= lesson.status %></td>
+        <td><a href="#" class="small button success" data-id=<%= lesson.id %>><%= lesson.status %></a></td>
         <td>Date goes here</td>
       </tr>
     <% end %>
