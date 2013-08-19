@@ -1,6 +1,6 @@
 class Order
   include Mongoid::Document
-  belongs_to :user
+  belongs_to :customer
   has_many :lessons
   belongs_to :instructor
 

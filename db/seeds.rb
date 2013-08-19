@@ -19,26 +19,50 @@ Package.create([
 	])
 
 User.destroy_all
-user = User.new(email: "superman@gmail.com", 
+Customer.destroy_all
+Instructor.destroy_all
+
+customer = Customer.new(email: "superman@gmail.com", 
 								password: "123", 
-								password_confirmation: "123")
+								password_confirmation: "123",
+								name_first: "Jim",
+								name_last: "Matthews",
+								phone: "310-322-7274")
+
+customer2 = Customer.new(email: "bill@gmail.com", 
+								password: "123", 
+								password_confirmation: "123",
+								name_first: "Bill",
+								name_last: "Roberts",
+								phone: "310-322-7274")
 
 instructor = Instructor.new(email: "donniemac@gmail.com",
 														password:"123",
-														password_confirmation:"123")
+														password_confirmation:"123",
+														name_first: "Don",
+														name_last: "McEnroe",
+														phone: "310-322-7274")
 
 instructor2 = Instructor.new(email: "roger@gmail.com",
 														password:"123",
-														password_confirmation:"123")
+														password_confirmation:"123",
+														name_first: "Roger",
+														name_last: "Lederer",
+														phone: "310-322-4332")
 
 order = Order.new(price: 8500,
 									quantity: 1,
-									user_id: user.id,
+									customer_id: customer.id,
 									instructor_id: instructor.id)
 
 order2 = Order.new(price: 40000,
 									quantity: 5,
-									user_id: user.id,
+									customer_id: customer.id,
+									instructor_id: instructor2.id)
+
+order3 = Order.new(price: 40000,
+									quantity: 5,
+									customer_id: customer2.id,
 									instructor_id: instructor2.id)
 
 1.times do 
@@ -51,8 +75,15 @@ end
 	lesson.save	
 end
 
-user.save
+order3.quantity.times do
+	lesson = Lesson.new(status: "Available", order_id: order3.id)
+	lesson.save	
+end
+
+customer.save
+customer2.save
 instructor.save
 instructor2.save
 order.save
 order2.save
+order3.save

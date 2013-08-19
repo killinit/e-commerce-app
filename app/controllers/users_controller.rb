@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
 
   def index
-    @customers = User.all
+    @customers = Customer.all
+    #create @orders collection
   end
 
   def create
@@ -24,7 +25,7 @@ class UsersController < ApplicationController
 
   def show
     @customer = current_user
-    @instructor = User.find_by(_type: "Instructor")
+    # @instructor = User.find_by(_type: "Instructor")
   end
 
   #email validation link was clicked, activate new account
