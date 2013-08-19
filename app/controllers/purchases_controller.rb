@@ -10,10 +10,14 @@ class PurchasesController < ApplicationController
   		@years.push year
   		year += 1
   	end
+
+    @instructors = Instructor.all
   end
     
   #this action executes when the purchase form is submitted
   def create
+    puts "create*******"
+    puts purchase_params
     user = User.find(session[:user_id])
     email = user.email
   	package_id = params[:purchase][:package]
@@ -33,6 +37,6 @@ class PurchasesController < ApplicationController
 
   private
   def purchase_params
-    params.require(:purchase).permit(:package, :name_first, :name_last, :phone, :email)
+    params.require(:purchase).permit(:package, :name_first, :name_last, :phone, :email, :instructor)
   end
 end

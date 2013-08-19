@@ -5,7 +5,7 @@
 		<section>
 	    <p class="title" data-section-title><a href="#" id="section-package">Select A Package</a></p>
 	    <div class="content" data-section-content>
-	      <div>
+	      <div class="row">
 	      	<% @packages.each do |package| %>
 	      		<div>
 	      			<%= form.radio_button(:package, package.id) %>
@@ -15,7 +15,19 @@
 	      											data: { quantity: package.quantity.to_s }) %>
 	      		</div>
 	      	<% end %>
-	      </div>
+	      </div><!--.row-->
+	      <div class="row">
+	      	<div class="small-3 columns">
+     				<label>
+             <span>Instructor</span>
+             <select name="purchase[instructor]">
+               <%= @instructors.each do |instructor| %>
+                 <option value=<%= instructor.id %>><%= instructor.name_last %></option>
+               <% end %>
+              </select>
+            </label>
+	      	</div>
+	      </div><!--.row-->
 	    </div>
 	  </section>
 	  <section>
