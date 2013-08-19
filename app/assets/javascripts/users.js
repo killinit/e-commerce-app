@@ -2,7 +2,7 @@
 if it was successful, change the color of the button to
 */
 
-$('.small.button.success').click(function() {
+$('.small.button').click(function() {
 	var button_clicked = $(this);
 	var lesson_to_update_id = $(this).data('id');
 	var updated_status = '';

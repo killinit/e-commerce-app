@@ -21,8 +21,8 @@
   </head>
 
   <body>
-    <div class="container">
-  
+    <div id="header">
+      
       <div id="user_nav">
         <% if name_first %>
           <div>Hi, <%= current_user.name_first %></div>
@@ -35,10 +35,10 @@
           <%= link_to "Log in", login_path %>
         <% end %>
       </div>
+    </div><!--#header-->
+    <div class="container">
+      <%= yield %>
     </div>
-    <%= yield %>
-
-    
     <%= javascript_include_tag "application" %>
   </body>
 </html>

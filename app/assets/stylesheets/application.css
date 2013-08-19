@@ -12,3 +12,22 @@
  *= require_tree .
  *= require foundation_and_overrides
  */
+
+ body {
+/*	background-color: #f6f6f4;*/
+	background-color: yellow;
+}
+
+#header {
+	height: 100px;
+
+}
+
+.container {
+	width: 1050px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #f6f6f4;
+	border: 1px solid black;
+}
+
