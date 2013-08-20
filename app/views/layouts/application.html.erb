@@ -22,7 +22,6 @@
 
   <body>
     <div id="header">
-      
       <div id="user_nav">
         <% if name_first %>
           <div>Hi, <%= current_user.name_first %></div>
@@ -37,6 +36,9 @@
       </div>
     </div><!--#header-->
     <div class="container">
+      <% flash.each do |name, msg| -%>
+        <%= content_tag :div, msg, class: name %>
+      <% end -%>
       <%= yield %>
     </div>
     <%= javascript_include_tag "application" %>

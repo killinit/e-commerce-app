@@ -32,4 +32,6 @@ $('.small.button').click(function() {
 			}
 		}//end success callback
 	});//end ajax function
+
+	return false;
 });
