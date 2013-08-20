@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
       redirect_to all_users_path
     elsif user
       session[:user_id] = user.id
-      redirect_to user_path(user.id), notice: "Logged in!"
+      redirect_to user_path(user.id)
       # redirect_to root_url, notice: "Logged in!"
     else
       flash.now.alert = "Invalid Login"
@@ -23,6 +23,6 @@ class SessionsController < ApplicationController
   #logout
   def destroy
     session[:user_id] = nil
-    redirect_to root_url, notice: "Logged out!"
+    redirect_to root_url
   end
 end
