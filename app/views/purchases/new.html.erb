@@ -19,7 +19,7 @@
   	 <div class="small-12 columns">
 				<label>
        <h4>Instructor</h4>
-       <select name="purchase[instructor]">
+       <select class="selectbox" name="purchase[instructor]">
          <%= @instructors.each do |instructor| %>
            <option value=<%= instructor.id %>><%= instructor.name_last %></option>
          <% end %>
@@ -66,7 +66,11 @@
     <div class="small-12 columns">
       <label>
         <span>Expiration (MM/YYYY)</span>
-        <select data-stripe="exp-month">
+    </div>
+  </div>
+  <div class="row">
+  	<div class="small-12 columns">
+        <select class="creditcardselect" data-stripe="exp-month">
           <%= @months.each do |month| %>
             <option value=<%= month %>><%= month %></option>
           <% end %>
@@ -74,7 +78,7 @@
         <!--<input type="select" size="2" data-stripe="exp-month"/>-->
       </label>
       <span> / </span>
-      <select data-stripe="exp-year">
+      <select class="creditcardselect" data-stripe="exp-year">
         <%= @years.each do |year| %>
           <option value=<%= year %>><%= year %></option>
         <% end %>

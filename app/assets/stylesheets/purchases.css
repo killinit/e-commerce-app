@@ -5,3 +5,11 @@ label {
 .hidden-package {
 	display: none;
 }
+
+.selectbox {
+	width:200px;
+}
+
+.creditcardselect {
+	width: 50px;
+}
