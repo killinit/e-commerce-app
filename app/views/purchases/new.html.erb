@@ -1,122 +1,104 @@
 <% provide(:title, "Purchase") %>
 
 <%= form_for @purchase, html: {autocomplete: :off} do |form| %>
-<!-- 	<div class="section-container accordion" data-section="accordion">
-		<section>
-	    <p class="title" data-section-title><a href="#" id="section-package">Select A Package</a></p>
-	    <div class="small-3 small-centered columns">3 centered</div>
-	    <div class="content" data-section-content> -->
-	      <div class="row">
-  				<div class="small-8 columns">      	
-  					<% @packages.each do |package| %>
-	      			<div>
-	      				<%= form.radio_button(:package, package.id) %>
-	      				<%= form.label("package_" + package.id.to_s, 
-	      											package.quantity.to_s + " Lesson $" + 
-	      											(package.price/100.0).to_s, 
-	      											data: { quantity: package.quantity.to_s }) %>
-	      			</div>
-	      		<% end %>
-	      	</div>
-	      	
-	      </div><!--.row-->
-	      <div class="row">
-	      	 <div class="small-2 columns">
-     				<label>
-             <span>Instructor</span>
-             <select name="purchase[instructor]">
-               <%= @instructors.each do |instructor| %>
-                 <option value=<%= instructor.id %>><%= instructor.name_last %></option>
-               <% end %>
-              </select>
-            </label>
-	      	</div>
-	      </div><!--.row-->
-<!-- 	  </section>
-	  <section> -->
-<!-- 	    <p class="title" data-section-title><a href="#" id="section-payment">Payment</a></p>
-	    <div class="content" data-section-content> -->
-	      <div class="row">
-	      	<div class="small-8 columns">
-	      		<%= form.label :first_name, class: "small-6 columns" %>
-	      		<%= form.text_field :name_first, class: "small-6 columns" %>
-	      	</div>
-	      </div>
-	      <div class="row">
-	      	<div class="small-8 columns">
-	      		<%= form.label :last_name, class: "small-6 columns" %>
-	      		<%= form.text_field :name_last, class: "small-6 columns" %>
-	      	</div>
-	      </div>
-	     	<div class="row">
-	      	<div class="small-8 columns">
-	      		<%= form.label :phone, class: "small-6 columns" %>
-	      		<%= form.text_field :phone, class: "small-6 columns" %>
-	      	</div>
-	      </div>
-<!-- 	      <div class="row">
-	      	<div class="small-8 columns">
-	      		<%= form.label :email, class: "small-6 columns" %>
-	      		<%= form.text_field :email, class: "small-6 columns" %>
-	      	</div>
-	      </div> -->
-	      <div class="row">
-	      	<div class="small-2 columns">
-	      		<div class="payment-errors"></div>
-	      		<label>
-	      			<span>Card Number</span>
-	      			<input type="text" size="20" data-stripe="number"/>
-	      		</label>
-	      	</div>
-	      </div>
-	      <div class="row">
-              <div class="small-1 columns">
-                <label>
-                  <span>CVC</span>
-                  <input type="text" size="4" data-stripe="cvc"/>
-              </label>
-              </div>
-            </div>
-	      <div class="row">
-          <div class="small-8 columns">
-            <label>
-              <span>Expiration (MM/YYYY)</span>
-              <select data-stripe="exp-month">
-                <%= @months.each do |month| %>
-                  <option value=<%= month %>><%= month %></option>
-                <% end %>
-              </select>
-              <!--<input type="select" size="2" data-stripe="exp-month"/>-->
-            </label>
-            <span> / </span>
-            <select data-stripe="exp-year">
-              <%= @years.each do |year| %>
-                <option value=<%= year %>><%= year %></option>
-              <% end %>
-            </select>
-            <!--<input type="select" size="4" data-stripe="exp-year"/>-->
-          </div>
-        </div>
-          </div>
-<!--         </section>
-	  <section> -->
-<!-- 	    <p class="title" data-section-title><a href="#" id="section-summary">Order Summary</a></p> -->
-<!-- 	    <div class="content" id="order-summary-content" data-section-content> -->
-	      <!--show the order summary-->
-	      <div id="summary_name_first"></div>
-	      <div id="summary_name_last"></div>
-	      <div id="summary_phone"></div>
-	      <div id="summary_payment_method"></div>
-	      <div>
-          <% @packages.each do |package| %>
-          <div id = "<%= package.id.to_s %>selected" class="hidden-package"> <%= package.quantity %> Lessons for $<%= (package.price/100.0).to_s %> 
-          </div>
-          <% end %>
-        </div>
-	  		<div><%= form.submit "Purchase", class: "small button" %></div>	  
-			</div>
-<!-- 		</section> -->
+  <div class="row">
+		<div class="small-12 columns">
+		<h4>Package</h4>      	
+			<% @packages.each do |package| %>
+  			<div>
+  				<%= form.radio_button(:package, package.id) %>
+  				<%= form.label("package_" + package.id.to_s, 
+  											package.quantity.to_s + " Lesson $" + 
+  											(package.price/100.0).to_s, 
+  											data: { quantity: package.quantity.to_s }) %>
+  			</div>
+  		<% end %>
+  	</div>	      	
+	</div><!--.row-->
+  <div class="row">
+  	 <div class="small-12 columns">
+				<label>
+       <h4>Instructor</h4>
+       <select name="purchase[instructor]">
+         <%= @instructors.each do |instructor| %>
+           <option value=<%= instructor.id %>><%= instructor.name_last %></option>
+         <% end %>
+        </select>
+      </label>
+  	</div>
+  </div><!--.row-->
+  <div class="row">
+  	<div class="small-12 columns">
+  		<%= form.label :first_name %>
+  		<%= form.text_field :name_first %>
+  	</div>
+  </div>
+  <div class="row">
+  	<div class="small-12 columns">
+  		<%= form.label :last_name %>
+  		<%= form.text_field :name_last %>
+  	</div>
+  </div>
+ 	<div class="row">
+  	<div class="small-12 columns">
+  		<%= form.label :phone %>
+  		<%= form.text_field :phone %>
+  	</div>
+  </div>
+  <div class="row">
+  	<div class="small-12 columns">
+  		<div class="payment-errors"></div>
+  		<label>
+  			<span>Card Number</span>
+  			<input type="text" size="20" data-stripe="number"/>
+  		</label>
+  	</div>
+  </div>
+	<div class="row">
+	  <div class="small-12 columns">
+	    <label>
+	      <span>CVC</span>
+	      <input type="text" size="4" data-stripe="cvc"/>
+	  	</label>
+	  </div>
 	</div>
+  <div class="row">
+    <div class="small-12 columns">
+      <label>
+        <span>Expiration (MM/YYYY)</span>
+        <select data-stripe="exp-month">
+          <%= @months.each do |month| %>
+            <option value=<%= month %>><%= month %></option>
+          <% end %>
+        </select>
+        <!--<input type="select" size="2" data-stripe="exp-month"/>-->
+      </label>
+      <span> / </span>
+      <select data-stripe="exp-year">
+        <%= @years.each do |year| %>
+          <option value=<%= year %>><%= year %></option>
+        <% end %>
+      </select>
+      <!--<input type="select" size="4" data-stripe="exp-year"/>-->
+    </div>
+  </div>
+ <!-- </div> -->
+  <!--show the order summary-->
+  <div id="summary_name_first"></div>
+  <div id="summary_name_last"></div>
+  <div id="summary_phone"></div>
+  <div id="summary_payment_method"></div>
+  <div>
+    <% @packages.each do |package| %>
+	    <div id = "<%= package.id.to_s %>selected" class="hidden-package"> <%= package.quantity %> Lessons for $<%= (package.price/100.0).to_s %> 
+	    </div>
+	  <% end %>
+	</div>
+	<div class="row">
+		<div class="small-12 columns">
+			<%= form.submit "Purchase", class: "small button" %>
+		</div>
+	</div>	  
 <% end %>
 <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
 <script>

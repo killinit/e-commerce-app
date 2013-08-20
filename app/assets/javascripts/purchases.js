@@ -34,7 +34,7 @@ var stripeResponseHandler = function(status, response) {
 
   if (response.error) {
     $form.find('.payment-errors').text(response.error.message);
-    $("#section-payment").click();
+    //$("#section-payment").click();
     $form.find('commit').prop('disabled', false);
   } else {
     // token contains id, last4, and card type

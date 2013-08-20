@@ -1,9 +1,9 @@
-<%= form_for @credential, url: users_path, html: {autocomplete: :off} do |form| %>
-  <% if @credential.errors.any? %>
+<%= form_for @customer, url: users_path, html: {autocomplete: :off} do |form| %>
+  <% if @customer.errors.any? %>
     <div class="error_messages">
       <h2>Form is invalid</h2>
       <ul>
-        <% for message in @credential.errors.full_messages %>
+        <% for message in @customer.errors.full_messages %>
           <li><%= message %></li>
         <% end %>
       </ul>

@@ -5,7 +5,14 @@
       <th with="150">Status</th>
     </tr>
   </thead>
-  <tbody>       
+  <tbody>
+    <% def add_style(item)
+     if (item.status ==  "Used")
+        return  "alert"
+      else 
+        return "success"
+      end
+    end %>      
     <% schedule.lessons.each_with_index do |lesson, index| %>
       <tr>
         <td>Lesson <%= index + 1 %></td>
