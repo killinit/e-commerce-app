@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   def create
     puts "create*********"
     puts params[:customer]
-    @customer = Customer.new params[:customer]
+    @customer = Customer.new user_params
     if @customer
       @customer.code = SecureRandom.urlsafe_base64
       @customer.expires_at = Time.now + 24.hours
@@ -72,7 +72,6 @@ class UsersController < ApplicationController
   end
 
   private
-
 
   def user_params
     params.require(:customer).permit(:email, :password, 
