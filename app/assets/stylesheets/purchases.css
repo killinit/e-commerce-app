@@ -7,9 +7,25 @@ label {
 }
 
 .selectbox {
-	width:200px;
+	width: 200px;
 }
 
 .creditcardselect {
 	width: 50px;
+}
+
+input.name-field {
+	width: 200px;
+}
+
+input.phone {
+	width: 100px;
+}
+
+input.number {
+	width: 130px;
+}
+
+input.cvc {
+	width: 40px;
 }
