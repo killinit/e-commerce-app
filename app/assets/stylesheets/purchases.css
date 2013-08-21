@@ -11,7 +11,7 @@ label {
 }
 
 .creditcardselect {
-	width: 50px;
+	width: 60px;
 }
 
 input.name-field {
@@ -28,4 +28,8 @@ input.number {
 
 input.cvc {
 	width: 40px;
+}
+
+.section {
+	padding-bottom: 20px;
 }
