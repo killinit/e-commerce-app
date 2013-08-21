@@ -1,4 +1,11 @@
-<!-- <h3><%#= "#{@customer.name_first}'s Dashboard" unless @customer.name_first.nil? %></h3> -->
+<div class="row">
+  <div class="small-3 small-centered columns">
+  	<h3><%= "#{@customer.name_first}'s Dashboard" unless @customer.name_first.nil? %></h3>
+  </div>
+</div>
+
+
+
 
 <% @customer.orders.each_with_index do |order, index| %>
 	<div class="row">
