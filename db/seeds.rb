@@ -1,4 +1,4 @@
-# Package.destroy_all
+Package.destroy_all
 Package.create([
 	{
 		quantity: 1,
@@ -18,9 +18,9 @@ Package.create([
 	}
 	])
 
-# User.destroy_all
-# Customer.destroy_all
-# Instructor.destroy_all
+User.destroy_all
+Customer.destroy_all
+Instructor.destroy_all
 
 customer = Customer.new(email: "superman@gmail.com", 
 								password: "123", 
