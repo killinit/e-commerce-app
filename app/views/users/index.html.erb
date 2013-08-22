@@ -1,3 +1,11 @@
+<div class="row">
+  <div class="small-6 large-centered columns">
+  	<h3>Instructor Dashboard</h3>
+  </div>
+</div>
+
+
+
 <% @customers.each do |customer| %>
 	<% customer.orders.each_with_index do |order, index| %>
 		<div class="row">
@@ -16,6 +24,4 @@
 	<% end %>
 <% end %>
 
-
 <%#= render partial: "layouts/schedule", collection: @customers %>
-
