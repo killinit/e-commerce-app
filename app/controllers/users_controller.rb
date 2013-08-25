@@ -31,7 +31,6 @@ class UsersController < ApplicationController
     if (Order.where(customer_id: @customer.id).count == 0)
       flash[:notice] = "You have no orders"
     end
-    # @instructor = User.find_by(_type: "Instructor")
   end
 
   #email validation link was clicked, activate new account

@@ -3,4 +3,5 @@ class Lesson
   belongs_to :order
   
   field :status, type: String
+  field :dateused, type: Date
 end

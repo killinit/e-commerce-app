@@ -4,9 +4,11 @@ $('.small.button').click(function() {
 	var updated_status = '';
 	if ($(this).data('status') == 'Available') {
 		updated_status = 'Used';
+		$('#' + lesson_to_update_id).html('<input type="date">');
 	}
 	else {
 		updated_status = 'Available';
+		$('#' + lesson_to_update_id).html('--------------')
 	}
 
 	$.ajax({

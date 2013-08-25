@@ -3,6 +3,7 @@
     <tr>
       <th width="150">Lesson</th>
       <th with="150">Status</th>
+      <th width="150">Date Used</th>
     </tr>
   </thead>
   <tbody>
@@ -18,6 +19,7 @@
         <td>Lesson <%= index + 1 %></td>
          <% if (current_user.is_a? Instructor) %>
           <td><a href="#" class="small button <%=add_style(lesson)%>" data-id=<%= lesson.id %> data-status=<%= lesson.status %>><%= lesson.status %></a></td>
+          <td id=<%= lesson.id %> data-dateused=<%= lesson.dateused %>>--------------</td>
           <% else %>
             <td><span class="<%=add_style(lesson)%> label" data-id=<%= lesson.id %> data-status=<%= lesson.status %>><%= lesson.status %></span></td>
           <% end %>
@@ -25,3 +27,8 @@
     <% end %>
   </tbody>
 </table>
+
+
+
+<!-- if lesson is Available, date is -----
+When lesson is Checked off, update database and use jquery to display date input -->
