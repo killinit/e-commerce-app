@@ -3,11 +3,9 @@ class UsersController < ApplicationController
 
   def index
     @customers = Customer.all
-    #create @orders collection
   end
 
   def create
-    puts "create*********"
     puts params[:customer]
     @customer = Customer.new user_params
     if @customer
