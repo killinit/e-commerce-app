@@ -22,7 +22,7 @@
 
   <body>
     <div id="header">
-      <div id="user_nav">
+      <div id="user_nav">        
         <% if name_first %>
           <div>Hi, <%= current_user.name_first %></div>
           <div><%= link_to "Log out", logout_path %></div>
