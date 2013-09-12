@@ -1,10 +1,14 @@
+$(function() {
+  $( "#datepicker" ).datepicker();
+});
+
 $('.small.button').click(function() {
 	var button_clicked = $(this);
 	var lesson_to_update_id = $(this).data('id');
 	var updated_status = '';
 	if ($(this).data('status') == 'Available') {
 		updated_status = 'Used';
-		$('#' + lesson_to_update_id).html('<input type="date">');
+		$('#' + lesson_to_update_id).html('<input type="text"/>');
 	}
 	else {
 		updated_status = 'Available';
