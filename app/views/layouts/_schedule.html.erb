@@ -15,20 +15,20 @@
       end
     end %>      
     <% schedule.lessons.each_with_index do |lesson, index| %>
+      <script>lessonsArray.push("<%= lesson.id %>");</script> 
       <tr>
         <td>Lesson <%= index + 1 %></td>
+        <td><span class="<%=add_style(lesson)%> label" id="label-<%= lesson.id %>" data-id=<%= lesson.id %> data-status=<%= lesson.status %>><%= lesson.status %></span></td>
          <% if (current_user.is_a? Instructor) %>
-          <td><a href="#" class="small button <%=add_style(lesson)%>" data-id=<%= lesson.id %> data-status=<%= lesson.status %>><%= lesson.status %></a></td>
-          <td id=<%= lesson.id %> data-dateused=<%= lesson.dateused %>>--------------</td>
-          <% else %>
-            <td><span class="<%=add_style(lesson)%> label" data-id=<%= lesson.id %> data-status=<%= lesson.status %>><%= lesson.status %></span></td>
-          <% end %>
+          <!-- make the date clickable -->
+          <td id="tablecell-<%= lesson.id %>"><input type="text" id="date-<%= lesson.id %>" data-id=<%= lesson.id %>></td>
+          <td><a href="#" class="small button" data-id=<%= lesson.id %>>Submit</a></td>
+         <% end %>
+
       </tr>
     <% end %>
   </tbody>
 </table>
-
-
 
 <!-- if lesson is Available, date is -----
 When lesson is Checked off, update database and use jquery to display date input -->

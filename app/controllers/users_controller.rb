@@ -51,6 +51,7 @@ class UsersController < ApplicationController
   def update
     lesson_to_update = Lesson.find params[:id]
     lesson_to_update.status = params[:status]
+    lesson_to_update.dateused = params[:dateused]
     lesson_to_update.save
     render nothing: true
 

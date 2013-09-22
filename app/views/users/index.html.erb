@@ -5,8 +5,7 @@
   </div>
 </div>
 
-
-
+<script>var lessonsArray = [];</script>
 <% @customers.each do |customer| %>
 	<% customer.orders.each_with_index do |order, index| %>
 		<div class="row">
@@ -16,10 +15,10 @@
 		</div>
 		<div class="row">
 		  <div class="large-6 columns">
-				<%= render partial: "layouts/schedule", object: order %>
+				<%= render partial: "layouts/contact", object: order.customer %>		
 			</div>
 		  <div class="large-6 columns">
-				<%= render partial: "layouts/contact", object: order.customer %>
+				<%= render partial: "layouts/schedule", object: order %>		  	
 			</div>
 		</div>
 	<% end %>
