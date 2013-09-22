@@ -50,13 +50,3 @@ $('.small.button').click(function() {
 
 	return false;
 });
-
-
-// when submit button is clicked:
-// 	update the database with the status and date
-// 	change the button text to "update"
-// 	change the status label to Used (red)
-
-// when update button is clicked:
-// 	change the status back to Available (green)
-// 	remove the date from the database
