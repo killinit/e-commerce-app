@@ -14,14 +14,13 @@
         return "success"
       end
     end %>      
-    <% schedule.lessons.each_with_index do |lesson, index| %>
-      <script>lessonsArray.push("<%= lesson.id %>");</script> 
+    <% schedule.lessons.each_with_index do |lesson, index| %> 
       <tr>
         <td>Lesson <%= index + 1 %></td>
         <td><span class="<%=add_style(lesson)%> label" id="label-<%= lesson.id %>" data-id=<%= lesson.id %> data-status=<%= lesson.status %>><%= lesson.status %></span></td>
         <% if (current_user.is_a? Instructor) %>
           <% if lesson.status == 'Available' %>
-            <td id="tablecell-<%= lesson.id %>"><input type="text" id="date-<%= lesson.id %>" data-id=<%= lesson.id %>></td>
+            <td id="tablecell-<%= lesson.id %>"><input type="text" id="date-<%= lesson.id %>" class="datepicker" data-id=<%= lesson.id %>></td>
             <td>
               <a href="#" class="small button" data-id=<%= lesson.id %>>Submit</a>
             </td>
@@ -29,6 +28,10 @@
             <td id="tablecell-<%= lesson.id %>"><span><%= lesson.dateused %></span></td>
             <td><a href="#" class="small button" data-id=<%= lesson.id %>>Edit</a></td>
           <% end %>
+        <% else %>
+          <% if lesson.status == 'Used' %>
+            <td><span><%= lesson.dateused %></span></td>   
+          <% end %>       
         <% end %>
       </tr>
     <% end %>

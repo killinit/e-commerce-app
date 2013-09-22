@@ -1,8 +1,8 @@
 $(function() {
   $( "#datepicker" ).datepicker();
-  for (i in lessonsArray) {
-  	$("#date-" + lessonsArray[i]).datepicker({ dateFormat: 'dd-mm-yy' });
-  }
+ 	$('.datepicker').each(function(index, item) {
+ 		$(item).datepicker({ dateFormat: 'dd-mm-yy' });
+ 	}); 
 });
 
 $('.small.button').click(function() {
