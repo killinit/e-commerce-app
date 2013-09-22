@@ -22,9 +22,16 @@
          <% if (current_user.is_a? Instructor) %>
           <!-- make the date clickable -->
           <td id="tablecell-<%= lesson.id %>"><input type="text" id="date-<%= lesson.id %>" data-id=<%= lesson.id %>></td>
-          <td><a href="#" class="small button" data-id=<%= lesson.id %>>Submit</a></td>
+          <td>
+            <a href="#" class="small button" data-id=<%= lesson.id %>>
+              <% if lesson.status == 'Available' %>
+                <%= 'Submit' %>
+              <% else %>
+                <%= 'Edit' %>
+              <% end %>
+            </a>
+          </td>
          <% end %>
-
       </tr>
     <% end %>
   </tbody>
