@@ -25,12 +25,12 @@
               <a href="#" class="small button" data-id=<%= lesson.id %>>Submit</a>
             </td>
           <% else %>
-            <td id="tablecell-<%= lesson.id %>"><span><%= lesson.dateused %></span></td>
+            <td id="tablecell-<%= lesson.id %>"><span><%= lesson.dateused.strftime("%d-%m-%y") %></span></td>
             <td><a href="#" class="small button" data-id=<%= lesson.id %>>Edit</a></td>
           <% end %>
         <% else %>
           <% if lesson.status == 'Used' %>
-            <td><span><%= lesson.dateused %></span></td>   
+            <td><span><%= lesson.dateused.strftime("%d-%m-%y") %></span></td>   
           <% end %>       
         <% end %>
       </tr>
