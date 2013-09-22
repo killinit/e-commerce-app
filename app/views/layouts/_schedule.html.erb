@@ -19,23 +19,18 @@
       <tr>
         <td>Lesson <%= index + 1 %></td>
         <td><span class="<%=add_style(lesson)%> label" id="label-<%= lesson.id %>" data-id=<%= lesson.id %> data-status=<%= lesson.status %>><%= lesson.status %></span></td>
-         <% if (current_user.is_a? Instructor) %>
-          <!-- make the date clickable -->
-          <td id="tablecell-<%= lesson.id %>"><input type="text" id="date-<%= lesson.id %>" data-id=<%= lesson.id %>></td>
-          <td>
-            <a href="#" class="small button" data-id=<%= lesson.id %>>
-              <% if lesson.status == 'Available' %>
-                <%= 'Submit' %>
-              <% else %>
-                <%= 'Edit' %>
-              <% end %>
-            </a>
-          </td>
-         <% end %>
+        <% if (current_user.is_a? Instructor) %>
+          <% if lesson.status == 'Available' %>
+            <td id="tablecell-<%= lesson.id %>"><input type="text" id="date-<%= lesson.id %>" data-id=<%= lesson.id %>></td>
+            <td>
+              <a href="#" class="small button" data-id=<%= lesson.id %>>Submit</a>
+            </td>
+          <% else %>
+            <td id="tablecell-<%= lesson.id %>"><span><%= lesson.dateused %></span></td>
+            <td><a href="#" class="small button" data-id=<%= lesson.id %>>Edit</a></td>
+          <% end %>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<!-- if lesson is Available, date is -----
-When lesson is Checked off, update database and use jquery to display date input -->
