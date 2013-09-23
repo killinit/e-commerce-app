@@ -29,8 +29,8 @@
             <td><a href="#" class="small button" data-id=<%= lesson.id %>>Edit</a></td>
           <% end %>
         <% else %>
-          <% if lesson.status == 'Used' %>
-            <td><span><%= lesson.dateused.strftime("%d-%m-%y") %></span></td>   
+          <% if lesson.status == 'Used' && !lesson.dateused.nil? %>
+            <td><span><%= lesson.dateused.strftime("%d-%m-%y") %></span></td>  
           <% end %>       
         <% end %>
       </tr>
