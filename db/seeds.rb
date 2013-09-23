@@ -66,17 +66,17 @@ order3 = Order.new(price: 40000,
 									instructor_id: instructor2.id)
 
 1.times do 
-	lesson = Lesson.new(status: "Available", order_id: order.id)
+	lesson = Lesson.new(status: "Available", dateused: '', order_id: order.id)
 	lesson.save
 end
 
 5.times do
-	lesson = Lesson.new(status: "Available", order_id: order2.id)
+	lesson = Lesson.new(status: "Available", dateused: '', order_id: order2.id)
 	lesson.save	
 end
 
 order3.quantity.times do
-	lesson = Lesson.new(status: "Available", order_id: order3.id)
+	lesson = Lesson.new(status: "Available", dateused: '', order_id: order3.id)
 	lesson.save	
 end
 
