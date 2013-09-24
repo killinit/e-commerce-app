@@ -1,7 +1,7 @@
 class Order
   include Mongoid::Document
   belongs_to :customer
-  has_many :lessons
+  embeds_many :lessons
   belongs_to :instructor
 
   field :price, type: Integer

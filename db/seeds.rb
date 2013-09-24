@@ -50,35 +50,36 @@ instructor2 = Instructor.new(email: "roger@gmail.com",
 														name_last: "Lederer",
 														phone: "310-322-4332")
 
+lessons_array = []
+1.times do 
+	lessons_array.push(Lesson.new(status: "Available", dateused: '')
+end
+
 order = Order.new(price: 8500,
 									quantity: 1,
 									customer_id: customer.id,
-									instructor_id: instructor.id)
+									instructor_id: instructor.id,
+									lessons: lessons_array)
 
+lessons_array.clear
+5.times do
+	lessons_array.push(Lesson.new(status: "Available", dateused: '')
+end
 order2 = Order.new(price: 40000,
 									quantity: 5,
 									customer_id: customer.id,
-									instructor_id: instructor2.id)
+									instructor_id: instructor2.id,
+									lessons: lessons_array)
 
+lessons_array.clear
+5.times do
+	lessons_array.push(Lesson.new(status: "Available", dateused: '')
+end
 order3 = Order.new(price: 40000,
 									quantity: 5,
 									customer_id: customer2.id,
-									instructor_id: instructor2.id)
-
-1.times do 
-	lesson = Lesson.new(status: "Available", dateused: '', order_id: order.id)
-	lesson.save
-end
-
-5.times do
-	lesson = Lesson.new(status: "Available", dateused: '', order_id: order2.id)
-	lesson.save	
-end
-
-order3.quantity.times do
-	lesson = Lesson.new(status: "Available", dateused: '', order_id: order3.id)
-	lesson.save	
-end
+									instructor_id: instructor2.id,
+									lessons: lessons_array)
 
 customer.save
 customer2.save

@@ -1,6 +1,6 @@
 class Lesson
   include Mongoid::Document
-  belongs_to :order
+  embedded_in :order
   
   field :status, type: String
   field :dateused, type: Date
