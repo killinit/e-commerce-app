@@ -6,6 +6,9 @@ $(function() {
 
 $('.small.button').click(function() {
 	var buttonClicked = $(this);
+	var order_to_update_id = $(this).data('order-id');
+	console.log('order id:');
+	console.log(order_to_update_id);
 	var lesson_to_update_id = $(this).data('id');
 	var updated_status = '';
 	var dateOfLesson = '';
