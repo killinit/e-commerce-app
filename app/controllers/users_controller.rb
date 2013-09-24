@@ -50,31 +50,11 @@ class UsersController < ApplicationController
 
   def update
     order_to_update = Order.find params[:orderId]
-    puts 'order_to_update***********'
-    puts order_to_update
     lesson_to_update = order_to_update.lessons.find params[:id]
-    puts 'lesson_to_update************'
-    puts lesson_to_update
     lesson_to_update.status = params[:status]
     lesson_to_update.dateused = params[:dateused]
     lesson_to_update.save
     render nothing: true
-
-  	# @user = User.find_by_code(params[:user][:code])
-  	# if @user and @user.expires_at > Time.now
-  	# 	@user.update_attributes(params[:user])
-  	# 	@user.code = nil
-  	# 	@user.expires_at = nil
-  	# 	if @user.save!
-  	# 		#account was updated. Login the user
-  	# 		session[:user_id] = @user.id
-  	# 		redirect_to dashboard_path(@user.id)
-  	# 	else
-  	# 		redirect_to dashboard_path(@user.id)
-  	# 	end
-  	# else
-  	# 	render "dashboard/index"
-  	# end
   end
 
   private
