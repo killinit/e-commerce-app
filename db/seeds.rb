@@ -52,7 +52,7 @@ instructor2 = Instructor.new(email: "roger@gmail.com",
 
 lessons_array = []
 1.times do 
-	lessons_array.push(Lesson.new(status: "Available", dateused: '')
+	lessons_array.push(Lesson.new(status: "Available", dateused: ''))
 end
 
 order = Order.new(price: 8500,
@@ -63,7 +63,7 @@ order = Order.new(price: 8500,
 
 lessons_array.clear
 5.times do
-	lessons_array.push(Lesson.new(status: "Available", dateused: '')
+	lessons_array.push(Lesson.new(status: "Available", dateused: ''))
 end
 order2 = Order.new(price: 40000,
 									quantity: 5,
@@ -73,7 +73,7 @@ order2 = Order.new(price: 40000,
 
 lessons_array.clear
 5.times do
-	lessons_array.push(Lesson.new(status: "Available", dateused: '')
+	lessons_array.push(Lesson.new(status: "Available", dateused: ''))
 end
 order3 = Order.new(price: 40000,
 									quantity: 5,
