@@ -49,7 +49,12 @@ class UsersController < ApplicationController
   end
 
   def update
-    lesson_to_update = Lesson.find params[:id]
+    order_to_update = Order.find params[:orderId]
+    puts 'order_to_update***********'
+    puts order_to_update
+    lesson_to_update = order_to_update.lessons.find params[:id]
+    puts 'lesson_to_update************'
+    puts lesson_to_update
     lesson_to_update.status = params[:status]
     lesson_to_update.dateused = params[:dateused]
     lesson_to_update.save
