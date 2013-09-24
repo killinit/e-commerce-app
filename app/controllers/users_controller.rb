@@ -3,6 +3,8 @@ class UsersController < ApplicationController
 
   def index
     @customers = Customer.all
+    #sort customers by first name
+    @customers.sort([:name_first])
   end
 
   def create
