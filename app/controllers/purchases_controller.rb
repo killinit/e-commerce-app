@@ -11,8 +11,6 @@ class PurchasesController < ApplicationController
   		year += 1
   	end
 
-    @name_first = current_user.name_first
-    @name_last = current_user.name_last
     @instructors = Instructor.all
   end
     

@@ -30,19 +30,19 @@
   <div class="row section">
   	<div class="small-12 columns">
   		<%= form.label :first_name %>
-  		<%= form.text_field :name_first, value:@name_first, class:"name-field" %>
+  		<%= form.text_field :name_first, value:current_user.name_first, class:"name-field" %>
   	</div>
   </div>
   <div class="row section">
   	<div class="small-12 columns">
   		<%= form.label :last_name %>
-  		<%= form.text_field :name_last, value:@name_last, class:"name-field" %>
+  		<%= form.text_field :name_last, value:current_user.name_last, class:"name-field" %>
   	</div>
   </div>
  	<div class="row section">
   	<div class="small-12 columns">
   		<%= form.label :phone %>
-  		<%= form.text_field :phone, class:"phone" %>
+  		<%= form.text_field :phone, value:current_user.phone, class:"phone" %>
   	</div>
   </div>
   <div class="row section">
