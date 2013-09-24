@@ -35,12 +35,14 @@
         <% end %>
       </div>
     </div><!--#header-->
-    <div class="container">
-      <% flash.each do |name, msg| -%>
-        <%= content_tag :div, msg, class: name %>
-      <% end -%>
-      <%= yield %>
-    </div>
+    <div class="row">
+      <div class="container small-12 columns">
+        <% flash.each do |name, msg| -%>
+          <%= content_tag :div, msg, class: name %>
+        <% end -%>
+        <%= yield %>
+      </div>
+    </div><!--.row-->
     <%= javascript_include_tag "application" %>
   </body>
 </html>
