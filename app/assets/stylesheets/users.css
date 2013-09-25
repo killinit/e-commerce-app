@@ -6,6 +6,10 @@ input.small-9.columns.signup-field {
 	text-align: center;
 }
 
+.panel {
+	padding: 0px;
+}
+
 .lessons-table {
 	width: 100%;
 }
