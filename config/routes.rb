@@ -9,11 +9,9 @@ MatchPoint::Application.routes.draw do
   get "all_users" => "users#index"
   #patch "users" => "users#update", as: :users
 
-  resources :credentials
   resources :sessions
   resources :users
   resources :purchases
-  resources :instructors
   root "sessions#new"
 
   # The priority is based upon order of creation: first created -> highest priority.
