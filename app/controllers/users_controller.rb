@@ -2,9 +2,8 @@ class UsersController < ApplicationController
   respond_to :json
 
   def index
-    @customers = Customer.all
-    #sort customers by first name
-    @customers.sort([:name_first])
+    @orders = current_user.orders
+    @orders.sort
   end
 
   def create
