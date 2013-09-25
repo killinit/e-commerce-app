@@ -19,7 +19,7 @@
     end %>      
     <% schedule.lessons.each_with_index do |lesson, index| %> 
       <tr>
-        <td>Lesson <%= index + 1 %></td>
+        <td><%= index + 1 %></td>
         <td><span class="<%=add_style(lesson)%> label" id="label-<%= lesson.id %>" data-id=<%= lesson.id %> data-status=<%= lesson.status %>><%= lesson.status %></span></td>
         <% if (current_user.is_a? Instructor) %>
           <% if lesson.status == 'Available' %>
