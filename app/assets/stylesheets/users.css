@@ -1,3 +1,7 @@
 input.small-9.columns.signup-field {
 	width: 200px;
 }
+
+.dashboard-heading {
+	text-align: center;
+}
