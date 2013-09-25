@@ -7,12 +7,12 @@
 <% @orders.each_with_index do |order, index| %>
 	<div class="panel">
 		<div class="row">
-		  <div class="large-6 columns">
+		  <div class="large-12 columns">
 				<%= render partial: "layouts/contact", object: order.customer %>		
 			</div>
 		</div>
 		<div class="row">
-		  <div class="large-6 columns">
+		  <div class="large-12 columns">
 				<%= render partial: "layouts/schedule", object: order %>		  	
 			</div>
 		</div>

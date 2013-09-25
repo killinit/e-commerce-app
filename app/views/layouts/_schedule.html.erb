@@ -1,9 +1,12 @@
-<table>
+<table class="lessons-table">
   <thead>
     <tr>
-      <th width="150">Lesson</th>
-      <th with="150">Status</th>
-      <th width="150">Date Used</th>
+      <th class="lesson-column">Lesson</th>
+      <th class="status-column">Status</th>
+      <th class="date-column" id="date-column">Date Used</th>
+      <% if (current_user.is_a? Instructor) %>
+        <th>&nbsp;</th>
+      <% end %>
     </tr>
   </thead>
   <tbody>
