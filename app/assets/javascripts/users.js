@@ -4,7 +4,7 @@ $(function() {
  	}); 
 });
 
-$('.small.button').click(function() {
+$('.small.button.toggle').click(function() {
 	var buttonClicked = $(this);
 	var order_to_update_id = $(this).data('order-id');
 	var lesson_to_update_id = $(this).data('id');

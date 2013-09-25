@@ -8,14 +8,16 @@ class Purchase
     user.name_first = name_first
     user.name_last = name_last
     user.phone = phone
+    lessons_array = []
+    quantity.to_i.times do 
+      lessons_array.push(Lesson.new(status: "Available", dateused: ''))
+    end
+        
     order = Order.new(price: price,
                       quantity: quantity,
                       customer_id: user.id,
-                      instructor_id: coach.id)
-    quantity.to_i.times do 
-      lesson = Lesson.new(status: "Available", order_id: order.id)
-      lesson.save
-    end
+                      instructor_id: coach.id,
+                      lessons: lessons_array)
 
     user.save
     order.save
