@@ -10,8 +10,12 @@ input.small-9.columns.signup-field {
 	width: 100%;
 }
 
-.lesson-column, .status-column {
-	width: 150px;
+.lesson-column {
+	width: 125px;
+}
+
+.status-column {
+	width: 75px;
 }
 
 th#date-column.date-column {

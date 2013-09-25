@@ -25,13 +25,13 @@
           <% if lesson.status == 'Available' %>
             <td id="tablecell-<%= lesson.id %>"><input type="text" id="date-<%= lesson.id %>" class="datepicker" data-id=<%= lesson.id %>></td>
             <td>
-              <a href="#" class="small button toggle" data-id=<%= lesson.id %> data-order-id=<%= schedule.id %>>Submit</a>
+              <a href="#" class="tiny button toggle" data-id=<%= lesson.id %> data-order-id=<%= schedule.id %>>Submit</a>
             </td>
           <% else %>
             <% unless lesson.dateused.nil? %>
               <td id="tablecell-<%= lesson.id %>"><span><%= lesson.dateused.strftime("%d-%m-%y") %></span></td>
             <% end %>
-            <td><a href="#" class="small button toggle" data-id=<%= lesson.id %> data-order-id=<%= schedule.id %>>Edit</a></td>
+            <td><a href="#" class="tiny button toggle" data-id=<%= lesson.id %> data-order-id=<%= schedule.id %>>Edit</a></td>
           <% end %>
         <% else %>
           <% if lesson.status == 'Used' && !lesson.dateused.nil? %>
