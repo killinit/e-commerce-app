@@ -1,12 +1,5 @@
-<table>
-  <thead>
-    <tr>
-      <th width="150"><%= contact.class %> Info</th>
-    </tr>
-  </thead>
-  <tbody>       
-    <tr><td><%= "#{contact.name_first} #{contact.name_last}" %></td></tr>
-    <tr><td><%= contact.email %></td></tr>
-    <tr><td><%= contact.phone %></td></tr>
-  </tbody>
-</table>
+<ul class="vcard">
+  <li class="fn"><%= "#{contact.name_first} #{contact.name_last}" %></li>
+  <li><%= contact.email %></li>
+  <li><%= contact.phone %></li>
+</ul>
