@@ -41,7 +41,7 @@ $('.tiny.button.toggle').click(function() {
 				statusLabel.addClass('success');
 				statusLabel.data('status','Available');
 				statusLabel.text('Available');
-				dateCell.html('<input type="text" id="date-'+lesson_to_update_id+'" data-id="'+lesson_to_update_id+'">');
+				dateCell.html('<input type="text" class="datepicker" id="date-'+lesson_to_update_id+'" data-id="'+lesson_to_update_id+'">');
 				$("#date-" + lesson_to_update_id).datepicker({ dateFormat: 'dd-mm-yy' });
 				// dateField.val('');
 				buttonClicked.text('Submit');
