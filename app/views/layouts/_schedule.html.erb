@@ -1,9 +1,9 @@
 <table class="lessons-table">
   <thead>
     <tr>
-      <th class="lesson-column">Lesson</th>
-      <th class="status-column">Status</th>
-      <th class="date-column" id="date-column">Date Used</th>
+      <th class="lesson-column centered">Lesson</th>
+      <th class="status-column centered">Status</th>
+      <th class="date-column centered" id="date-column">Date Used</th>
       <% if (current_user.is_a? Instructor) %>
         <th>&nbsp;</th>
       <% end %>
@@ -19,23 +19,23 @@
     end %>      
     <% schedule.lessons.each_with_index do |lesson, index| %> 
       <tr>
-        <td><%= index + 1 %></td>
-        <td><span class="<%=add_style(lesson)%> label" id="label-<%= lesson.id %>" data-id=<%= lesson.id %> data-status=<%= lesson.status %>><%= lesson.status %></span></td>
+        <td class="centered"><%= index + 1 %></td>
+        <td class="centered"><span class="<%=add_style(lesson)%> label" id="label-<%= lesson.id %>" data-id=<%= lesson.id %> data-status=<%= lesson.status %>><%= lesson.status %></span></td>
         <% if (current_user.is_a? Instructor) %>
           <% if lesson.status == 'Available' %>
-            <td id="tablecell-<%= lesson.id %>"><input type="text" id="date-<%= lesson.id %>" class="datepicker" data-id=<%= lesson.id %>></td>
-            <td>
+            <td class="centered" id="tablecell-<%= lesson.id %>"><input type="text" id="date-<%= lesson.id %>" class="datepicker" data-id=<%= lesson.id %>></td>
+            <td class="centered">
               <a href="#" class="tiny button toggle" data-id=<%= lesson.id %> data-order-id=<%= schedule.id %>>Submit</a>
             </td>
           <% else %>
             <% unless lesson.dateused.nil? %>
-              <td id="tablecell-<%= lesson.id %>"><span><%= lesson.dateused.strftime("%d-%m-%y") %></span></td>
+              <td class="centered" id="tablecell-<%= lesson.id %>"><span><%= lesson.dateused.strftime("%d-%m-%y") %></span></td>
             <% end %>
-            <td><a href="#" class="tiny button toggle" data-id=<%= lesson.id %> data-order-id=<%= schedule.id %>>Edit</a></td>
+            <td class="centered"><a href="#" class="tiny button toggle" data-id=<%= lesson.id %> data-order-id=<%= schedule.id %>>Edit</a></td>
           <% end %>
         <% else %>
           <% if lesson.status == 'Used' && !lesson.dateused.nil? %>
-            <td><span><%= lesson.dateused.strftime("%d-%m-%y") %></span></td>  
+            <td class="centered"><span><%= lesson.dateused.strftime("%d-%m-%y") %></span></td>  
           <% end %>       
         <% end %>
       </tr>

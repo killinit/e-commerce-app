@@ -10,18 +10,22 @@ input.small-9.columns.signup-field {
 	padding: 0px;
 }
 
+.centered {
+	text-align: center;
+}
+
 .lessons-table {
 	width: 100%;
 }
 
 .lesson-column {
-	width: 30px;
+	width: 15%;
 }
 
 .status-column {
-	width: 75px;
+	width: 25%;
 }
 
 th#date-column.date-column {
-	width:150px;
+	width:35%;
 }
