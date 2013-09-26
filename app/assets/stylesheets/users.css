@@ -23,7 +23,7 @@ input.small-9.columns.signup-field {
 }
 
 .lesson-column {
-	width: 15%;
+	width: 5%;
 }
 
 .status-column {
@@ -31,7 +31,7 @@ input.small-9.columns.signup-field {
 }
 
 th#date-column.date-column {
-	width:35%;
+	width:45%;
 }
 
 .label.alert, .label.success {
@@ -40,7 +40,7 @@ th#date-column.date-column {
 }
 
 input.datepicker {
-	width: 50%;
+	width: 83%;
 	margin-left: auto;
 	margin-right: auto;
 }
