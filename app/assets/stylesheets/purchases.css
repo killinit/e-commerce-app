@@ -6,12 +6,23 @@ label {
 	display: none;
 }
 
+fieldset legend {
+	background-color: #f2f2f2;
+	font-size: 20px;
+}
+
 .selectbox {
-	width: 200px;
+  width: 125px;
+  height: 30px;
+  overflow: hidden;
+  border: 1px solid #ccc;
 }
 
 .creditcardselect {
 	width: 60px;
+ 	height: 25px;
+ 	overflow: hidden;
+ 	border: 1px solid #ccc;
 }
 
 input.name-field {

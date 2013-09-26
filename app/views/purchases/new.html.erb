@@ -1,5 +1,10 @@
 <% provide(:title, "Purchase") %>
 <div class="wrapper small-12 columns">  
+  <div class="row">
+    <div class="small-12 small-centered columns">
+      <h3 class="dashboard-heading">Purchase Lessons</h3>
+    </div>
+  </div>
   <%= form_for @purchase, html: {autocomplete: :off} do |form| %>
     <div class="row section">
   		<div class="small-12 columns">
@@ -67,7 +72,7 @@
     <div class="row section">
       <div class="small-12 columns">
         <label>
-          <span>Expiration (MM/YYYY)</span>
+          <span>Expiration Date</span>
       </div>
     </div>
     <div class="row section">
