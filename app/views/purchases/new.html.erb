@@ -3,32 +3,34 @@
 <%= form_for @purchase, html: {autocomplete: :off} do |form| %>
   <div class="row section">
 		<div class="small-12 columns">
-		<h4>Package</h4>      	
-			<% @packages.each do |package| %>
-  			<div>
-  				<%= form.radio_button(:package, package.id) %>
-  				<%= form.label("package_" + package.id.to_s, 
-  											package.quantity.to_s + " Lesson $" + 
-  											(package.price/100.0).to_s, 
-  											data: { quantity: package.quantity.to_s }) %>
-  			</div>
-  		<% end %>
+  		<fieldset>     	
+        <legend>Package</legend>
+  			<% @packages.each do |package| %>
+    			<div>
+    				<%= form.radio_button(:package, package.id) %>
+    				<%= form.label("package_" + package.id.to_s, 
+    											package.quantity.to_s + " Lesson $" + 
+    											(package.price/100.0).to_s, 
+    											data: { quantity: package.quantity.to_s }) %>
+    			</div>
+    		<% end %>
+      </fieldset>
   	</div>	      	
 	</div><!--.row-->
   <div class="row section">
   	 <div class="small-12 columns">
-				<label>
-       <h4>Instructor</h4>
-       <select class="selectbox" name="purchase[instructor]">
+		  <fieldset>
+        <legend>Instructor</legend>
+        <select class="selectbox" name="purchase[instructor]">
          <%= @instructors.each do |instructor| %>
            <option value=<%= instructor.id %>><%= instructor.name_last %></option>
          <% end %>
         </select>
-      </label>
+      </fieldset>
   	</div>
   </div><!--.row-->
   <div class="row section">
-  	<div class="small-12 columns">
+  	<div class="large-12 columns">
   		<%= form.label :first_name %>
   		<%= form.text_field :name_first, value:current_user.name_first, class:"name-field" %>
   	</div>
