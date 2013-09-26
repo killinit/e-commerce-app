@@ -3,9 +3,11 @@
     <tr>
       <th class="lesson-column centered">&nbsp;</th>
       <th class="status-column centered">Status</th>
-      <th class="date-column centered" id="date-column">Date Used</th>
       <% if (current_user.is_a? Instructor) %>
+        <th class="date-column centered" id="date-column">Date Used</th>
         <th>&nbsp;</th>
+      <% else %>
+        <th class="customer-date-column centered" id="customer-date-column">Date Used</th>
       <% end %>
     </tr>
   </thead>

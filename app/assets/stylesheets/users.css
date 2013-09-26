@@ -34,6 +34,10 @@ th#date-column.date-column {
 	width:45%;
 }
 
+th#customer-date-column.customer-date-column {
+	width: 100%;
+}
+
 .label.alert, .label.success {
 	width: 93%;
 	padding: 0.6em 0em 0.6em;
