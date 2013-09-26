@@ -7,3 +7,17 @@
 	padding-left: 10px;
 	padding-bottom: 10px;
 }
+
+
+
+#login-container.login-wrapper {
+	width: 500px;
+	margin-top: 100px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #f2f2f2;
+	border: 1px solid black;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+

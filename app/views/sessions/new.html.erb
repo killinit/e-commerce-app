@@ -1,25 +1,26 @@
-<div class="row">
-  <h4 id="login" class="small-3 columns">Log In</h4>
-  <span class="small-6 columns">email: roger@gmail.com</span>
-  <span class="small-3 columns">password: 123</span>
-</div>
+<div id="login-container" class="login-wrapper">    
+    <h4 id="login">Log In</h4>
+<!--     <span class="small-6 columns">email: roger@gmail.com</span>
+    <span class="small-3 columns">password: 123</span> -->
 
-<%= form_tag sessions_path do %><!--POST request goes to sessions#create-->
-<div class="row">
-  <div class="small-12 columns">
-    <%= label_tag :email, nil, class: "small-2 columns"%>
-    <%= text_field_tag(:email, nil, class: "small-10 columns") %>
-  </div>
-</div>
+
+  <%= form_tag sessions_path do %><!--POST request goes to sessions#create-->
   <div class="row">
     <div class="small-12 columns">
-      <%= label_tag :password, nil, class: "small-2 columns"%>
-      <%= password_field_tag(:password, nil, class: "small-10 columns") %>
+      <%= label_tag :email, nil, class: "small-2 columns"%>
+      <%= text_field_tag(:email, nil, class: "small-10 columns") %>
     </div>
   </div>
-  <div class="row">      
-    <div class="small-12 columns">
-      <%= submit_tag :Login, :class => "button" %>
+    <div class="row">
+      <div class="small-12 columns">
+        <%= label_tag :password, nil, class: "small-2 columns"%>
+        <%= password_field_tag(:password, nil, class: "small-10 columns") %>
+      </div>
     </div>
-  </div>
-<% end %>
+    <div class="row">      
+      <div class="small-12 columns">
+        <%= submit_tag :Login, :class => "button" %>
+      </div>
+    </div>
+  <% end %>
+</div>
