@@ -33,7 +33,7 @@
             <% unless lesson.dateused.nil? %>
               <td class="centered" id="tablecell-<%= lesson.id %>"><span><%= lesson.dateused.strftime("%d-%m-%y") %></span></td>
             <% end %>
-            <td class="centered"><a href="#" class="tiny button toggle" data-id=<%= lesson.id %> data-order-id=<%= schedule.id %>>Edit</a></td>
+            <td class="button-column centered"><a href="#" class="tiny button toggle" data-id=<%= lesson.id %> data-order-id=<%= schedule.id %>>Edit</a></td>
           <% end %>
         <% else %>
           <% if lesson.status == 'Used' && !lesson.dateused.nil? %>

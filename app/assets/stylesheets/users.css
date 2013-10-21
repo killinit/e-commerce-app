@@ -39,10 +39,11 @@ input.small-9.columns.signup-field {
 	max-width: 90px;
 }
 .lessons-table .tiny.button.toggle {
-	padding: 3% 5%;
+	padding: 0.6em 0 0.6em;
 	width: 59px;
 	background-color: white;
 	color: black;
+	font-size: 0.875em;
 }
 
 th#date-column.date-column {

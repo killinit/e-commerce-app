@@ -81,10 +81,10 @@
 		margin-right: 5%;
 	}
 	#login-hints.hints {
-		width: 50%;
+		width: 100%;
 		float: none;
 		margin-top: 5%;
-		margin-left: 4%;
+		margin-left: 3%;
 	}
 	.login.button {
 		font-size: 0.75em;
