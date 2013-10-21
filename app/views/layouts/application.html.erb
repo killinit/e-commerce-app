@@ -21,29 +21,38 @@
   </head>
 
   <body>
-    <div id="header">
-      <div id="user_nav">        
-        <% if name_first %>
-          <div>Hi, <%= current_user.name_first %></div>
-          <div><%= link_to "Log out", logout_path %></div>
-        <% elsif current_user %>
-          Logged in as <%= current_user.email %> 
-          <%= link_to "Log out", logout_path %>
-        <% else %>
-          <%= link_to "Sign up", signup_path %> or
-          <%= link_to "Log in", login_path %>
-        <% end %>
-      </div>
-    </div><!--#header-->
-    <div class="row">
-      <div class="container small-12 columns">
-        <% flash.each do |name, msg| -%>
-          <%= content_tag :div, msg, class: name %>
-        <% end -%>
-        <%= yield %>
-      </div>
-    </div><!--.row-->
-    <%= javascript_include_tag "application" %>
+    <div id="wrapper">
+      <header class="clearfix">
+        <div id="logo">
+          <h1>Match Point</h1>
+        </div>
+        <!-- <nav id="main-nav" class="clearfix">
+          <ul>
+            <li><a href="#">DASHBOARD</a></li>
+            <li><a href="#">PURCHASE</a></li>          
+            <li><a href="#">CONTACT</a></li>
+          </ul>
+        </nav> -->
+        <div id="user_nav">   
+          <nav> 
+            <ul>  
+              <% if name_first %>
+                <li>Hi, <%= current_user.name_first %></li>
+                <li><%= link_to "Log out", logout_path %></li>
+              <% elsif current_user %>
+                <li>Logged in as <%= current_user.email %></li>
+                <li><%= link_to "Log out", logout_path %></li>
+              <% else %>
+                <li><%= link_to "Sign up", signup_path %></li>
+                <li><%= link_to "Log in", login_path %></li>
+              <% end %>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <%= yield %>
+      <%= javascript_include_tag "application" %>
+    </div><!--.#wrapper-->
   </body>
 </html>
 

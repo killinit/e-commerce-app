@@ -4,10 +4,12 @@ input.small-9.columns.signup-field {
 
 .dashboard-heading {
 	text-align: center;
+	color: black;
 }
 
 .panel {
 	padding: 0px;
+	background-color: #F9F93E;
 }
 
 .centered {
@@ -20,6 +22,10 @@ input.small-9.columns.signup-field {
 
 .lessons-table {
 	width: 100%;
+	background-color: #F9F93E;
+}
+.lessons-table thead {
+	background-color: #F9F93E;
 }
 
 .lesson-column {
@@ -28,6 +34,13 @@ input.small-9.columns.signup-field {
 
 .status-column {
 	width: 25%;
+}
+.lessons-table .alert.label, .lessons-table .success.label {
+	max-width: 90px;
+}
+.lessons-table .tiny.button.toggle {
+	padding: 3% 5%;
+	width: 59px;
 }
 
 th#date-column.date-column {
@@ -45,6 +58,7 @@ th#customer-date-column.customer-date-column {
 
 input.datepicker {
 	width: 83%;
+	max-width: 80px;
 	margin-left: auto;
 	margin-right: auto;
 }
