@@ -38,15 +38,15 @@
 	color: #F7F033;
 }
 #user_nav {
-	width: 49%;
+	width: 58%;
 	float: left;
 }
 #user_nav ul {
-	margin-left: 3%;
+	margin-left: 52%;
 	list-style-type: none;
 }
 #user_nav ul li {
-	float: right;
+	float: left;
 	background-color: #F9F93E;
 	margin: 0 3%;
 	padding: 2% 3%;

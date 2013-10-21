@@ -41,6 +41,8 @@ input.small-9.columns.signup-field {
 .lessons-table .tiny.button.toggle {
 	padding: 3% 5%;
 	width: 59px;
+	background-color: white;
+	color: black;
 }
 
 th#date-column.date-column {
