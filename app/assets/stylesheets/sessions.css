@@ -89,4 +89,10 @@
 	.login.button {
 		font-size: 0.75em;
 	}
+	.lessons-table .tiny.button.toggle {
+		padding: 4% 5%;
+		width: 59px;
+		background-color: white;
+		color: black;
+	}
 }

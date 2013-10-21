@@ -3,7 +3,9 @@ input.small-9.columns.signup-field {
 }
 
 .dashboard-heading {
-	text-align: center;
+	float: left;
+	width: 37%;
+	margin-left: 36%;
 	color: black;
 }
 
@@ -64,4 +66,30 @@ input.datepicker {
 	max-width: 80px;
 	margin-left: auto;
 	margin-right: auto;
+}
+#purchase-button-top {
+	float: left;
+	margin-top: 1%;
+	background-color: #fff;
+	color: black;
+}
+#purchase-button {
+	background-color: #fff;
+	color: black;
+	float: right;
+	margin-right: 11%;
+}
+@media screen and (max-width: 880px) {
+	#purchase-button {
+		margin-right: 10%;
+	}
+}
+@media screen and (max-width: 580px) {
+	#purchase-button-top {
+		float: none;
+		margin-left: 36%;
+	}	
+	#purchase-button {
+		margin-right: 27%;
+	}
 }
